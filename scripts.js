@@ -1,6 +1,6 @@
 const menu = document.getElementById("hamburger");
-menu.addEventListener("click", function () {
 
+menu.addEventListener("click", function () {
     if (menu.className === "hamburger active") {
         menu.classList.remove("active");
         // menuMobile.classList.remove("Menu-main-mobile-active");
