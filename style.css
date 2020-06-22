@@ -358,7 +358,7 @@ margin:10px 0;
         flex-direction: column;
     }
     .box{
-        height:inherit;
+        height:initial;
     }
     .box_content_img{
         margin-top:15px;
