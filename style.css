@@ -350,12 +350,21 @@ margin:10px 0;
         font-size:30px;
     }
     .inside_footer_Nasze_uslugi{
-        width:80%;
+        width:95%;
     }
 }
 @media only screen and (max-width: 800px){
     .Nasze_uslugi_header{
         flex-direction: column;
+    }
+    .box{
+        height:inherit;
+    }
+    .box_content_img{
+        margin-top:15px;
+    }
+    .box_content_paragraph{
+        margin-bottom:30px;
     }
 }
 @media only screen and (max-width: 600px){
