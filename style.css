@@ -271,6 +271,8 @@ body{
 .Nasze_uslugi_footer_paragraph{
     font-size:18px;
     color:#EEEEEE;
+    line-height: 1.2;
+    word-spacing:5px;
 }
 .belka_Nasze_uslugi_footer{
   margin:10px 0 10px 0;
@@ -384,12 +386,17 @@ margin:10px 0;
         height:200px;
     }
 }
+@media only screen and (max-width: 450px){
+    .box{
+        width:90%;
+    }
+}
 @media only screen and (max-width: 400px){
     .header_logo{
         max-width: inherit;
         width:60%;
     }
-    .box{
+    /* .box{
         width:250px;
-    }
+    } */
 }
