@@ -386,17 +386,17 @@ margin:10px 0;
         height:200px;
     }
 }
-@media only screen and (max-width: 450px){
+/* @media only screen and (max-width: 450px){
     .box{
-        width:90%;
+        width:100%;
     }
-}
+} */
 @media only screen and (max-width: 400px){
     .header_logo{
         max-width: inherit;
         width:60%;
     }
-    /* .box{
-        width:250px;
-    } */
+    .box{
+        width:100%;
+    }
 }
