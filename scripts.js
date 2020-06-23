@@ -13,14 +13,16 @@ menu.addEventListener("click", function () {
 let index = 1;
 const galleryContainer = document.getElementById("gallery-container");
 const body = document.getElementById("body");
-const btn_left = document.getElementById("button_left");
-const btn_right = document.getElementById("button_right");
+
 
 
 let numberOfSlide = 3;
 let sliderTableElement = {
     el: {
         image_container: document.querySelectorAll(".img_container_img"),
+        btn_right: document.getElementById("button_right"),
+        btn_left: document.getElementById("button_left")
+
     },
     image_container_width: document.querySelector(".img_container_img").offsetWidth,
     touchStartx: undefined,
@@ -38,11 +40,17 @@ let sliderTableElement = {
             sliderTableElement.move(e);
         });
         galleryContainer.addEventListener("touchend", (e) => {
-            sliderTableElement.end(e);
+            sliderTableElement.end(e, "none");
 
         });
-        
-        
+        this.el.btn_right.addEventListener("click", e => {
+            sliderTableElement.end(e, "right")
+        });
+        this.el.btn_left.addEventListener("click", e => {
+            sliderTableElement.end(e, "left")
+        });
+
+
     },
     start: function (e) {
         this.touchStartx = e.targetTouches[0].pageX;
@@ -52,25 +60,37 @@ let sliderTableElement = {
         this.touchMovex = e.targetTouches[0].pageX;
         this.moveX = (index - 1) * this.image_container_width + (this.touchStartx - this.touchMovex);
         galleryContainer.classList.add("animatee");
-        if (index < numberOfSlide ) {
+        if (index < numberOfSlide) {
             console.log('xd')
             for (let i = 0; i <= 2; i++) {
                 this.el.image_container[i].style.transform = ("translate", "translate3d(-" + this.moveX + "px,0,0)");
             }
         }
-        if (this.touchMovex > this.touchStartx && index === numberOfSlide ) {
+        if (this.touchMovex > this.touchStartx && index === numberOfSlide) {
             console.log(';lol')
             for (let i = 0; i <= 2; i++) {
                 this.el.image_container[i].style.transform = ("translate", "translate3d(-" + this.moveX + "px,0,0)");
             }
         }
     },
-    end: function (e) {
-        body.style.overflowY = "scroll";
-        let distance = Math.abs((index - 1) * this.image_container_width - this.moveX)
-        if (distance > this.image_container_width / 3) {
+    end: function (e, T) {
+        let distance;
+        if (T == "right") {
+            distance = this.image_container_width;
+            this.touchMovex = 10
+            this.touchStartx = 20
+        } else if (T == "left") {
+            distance = this.image_container_width;
+            this.touchMovex = 20
+            this.touchStartx = 10
+        } else {
+            distance = Math.abs((index - 1) * this.image_container_width - this.moveX)
+        }
 
-            if (this.touchMovex < this.touchStartx && index > 1 && index < numberOfSlide ) {
+        body.style.overflowY = "scroll";
+        if (distance > this.image_container_width / 3) {
+            console.log(this.touchMovex < this.touchStartx)
+            if (this.touchMovex < this.touchStartx && index > 1 && index < numberOfSlide) {
                 for (let i = 0; i <= 2; i++) {
                     this.el.image_container[i].style.transform = ("translate", "translate3d(-" + (this.image_container_width * index) + "px,0,0)");
                 }
@@ -93,38 +113,10 @@ let sliderTableElement = {
             }
         }
         sliderTableElement.end2();
-console.log(index)
-console.log(numberOfSlide)
     },
     end2: function (e) {
         galleryContainer.classList.remove("animatee");
-        // number_of_image.innerHTML = index + "/" + (numberOfSlide + 1);
     },
 
 }
 sliderTableElement.init();
-btn_right.addEventListener("click", e=>{
-    if(index < numberOfSlide){
-        console.log(sliderTableElement.image_container_width)
-        console.log(index)
-            for (let i = 0; i <= numberOfSlide-1; i++) {
-                console.log('robi sie petla w prawo')
-                sliderTableElement.el.image_container[i].style.transform = ("translate", "translate3d(-" + sliderTableElement.image_container_width*index + "px,0,0)");
-            }
-            index++;
-    }
- 
-    
-    })
-    btn_left.addEventListener("click", e=>{
-        if(index >= 1){
-            index--;
-            console.log(sliderTableElement.image_container_width)
-                for (let i = 0; i <= numberOfSlide-1; i++) {
-                    console.log("robi sie petla w lewo")
-                    sliderTableElement.el.image_container[i].style.transform = ("translate", "translate3d(-" + sliderTableElement.image_container_width*index + "px,0,0)");
-        
-                }
-        }
-        
-        })

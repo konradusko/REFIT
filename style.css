@@ -409,7 +409,10 @@ border-radius: 10px;
     width:40px;
     height:40px;
     z-index: 19;
+
 }
+.button2:focus {outline:0;}
+.button1:focus {outline:0;}
 .dots_container{
     position: absolute;
     top: 90%;
@@ -508,11 +511,45 @@ border-radius: 10px;
     .box {
         margin: auto auto 100px auto;
     }
+    .img_container{
+        height:450px;
+    }
 }
 
 @media only screen and (max-width: 1080px) {
     .menu_container li button {
         font-size: 20px;
+    }
+    .Realizacje_section_container{
+        flex-direction: column;
+    }
+    .img_container{
+        width:100%;
+        order:2;
+
+    }
+    .realizacje_about_container{
+        order:1;
+        width:100%;
+        height:initial;
+        margin-bottom:100px;
+
+
+    }
+   
+    .realizacje_container{
+        width:80%;
+        height:100%;
+        margin:initial;
+    }
+    .realizacje_container_title{
+        margin-bottom:20px;
+    }
+    .realizacje_container_belka{
+        margin-bottom:20px;
+    }
+    .realizacje_container_paragraph{
+        margin-bottom: 20px;
     }
 }
 
@@ -582,7 +619,11 @@ border-radius: 10px;
         margin-bottom: 30px;
     }
 }
-
+@media only screen and (max-width: 700px){
+    .img_container{
+        height:350px;
+    }
+}
 @media only screen and (max-width: 600px) {
     .header_logo {
         max-width: 300px;
@@ -596,11 +637,20 @@ border-radius: 10px;
         width: 90%;
         margin: 0 auto 10px 0;
     }
+    .realizacje_container{
+        width:90%;
+    }
+    .img_container{
+        height:300px;
+    }
 }
 
 @media only screen and (max-width: 500px) {
     .Nasze_uslugi_container img {
         height: 200px;
+    }
+    .realizacje_container_title{
+        font-size:34px;
     }
 }
 
