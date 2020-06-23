@@ -1,53 +1,65 @@
-*{
-    padding:0;
-    margin:0;
+* {
+    padding: 0;
+    margin: 0;
     box-sizing: border-box;
 }
-body{
+
+body {
     overflow-x: hidden;
-    height:100vh;
+    height: 100vh;
 }
+
 /* Nav */
-.nav_container{
-    width:100%;
-    height:64px;
-    background-color:#000000;
-    opacity:.8;
-    display:flex;
+.nav_container {
+    width: 100%;
+    height: 64px;
+    background-color: #000000;
+    opacity: .8;
+    display: flex;
     position: fixed;
+    z-index: 20;
 }
-.ul_container{
-    width:85%;
-    height:34px;
-    margin:auto;
+
+.ul_container {
+    width: 85%;
+    height: 34px;
+    margin: auto;
     /* background-color:red; */
-    display:flex;
+    display: flex;
     justify-content: space-between;
 }
-.ul_container li{
+
+.ul_container li {
     list-style-type: none;
     height: 100%;
 }
 
-.ul_container .logo_Refit{
-    width:40px;
-    height:100%;
+.ul_container .logo_Refit {
+    width: 40px;
+    height: 100%;
 }
-.ul_container .logo_Refit a ,.ul_container .logo_Refit img{
-    width:40px;
-    height:100%;
+
+.ul_container .logo_Refit a,
+.ul_container .logo_Refit img {
+    width: 40px;
+    height: 100%;
 }
-.ul_container .container_for_buttons{
-/* background-color:blue; */
+
+.ul_container .container_for_buttons {
+    /* background-color:blue; */
 }
-.ul_container .logo_facebook{
-    width:34px;
-    height:100%
+
+.ul_container .logo_facebook {
+    width: 34px;
+    height: 100%
 }
-.ul_container .logo_facebook a, .ul_container .logo_facebook img{
-    width:34px;
-    height:100%;
+
+.ul_container .logo_facebook a,
+.ul_container .logo_facebook img {
+    width: 34px;
+    height: 100%;
 }
+
 /* .ul_container .button_for_mobile{
     width:40px;
     height:40px;
@@ -55,32 +67,35 @@ body{
 } */
 /* menu ul*/
 
-.menu_container{
-    display:flex;
+.menu_container {
+    display: flex;
     justify-content: space-between;
-    height:100%;
-    width:100%;
+    height: 100%;
+    width: 100%;
     max-width: 700px;
 }
-.menu_container li{
+
+.menu_container li {
     list-style-type: none;
     height: 100%;
-    display:flex;
+    display: flex;
     margin: auto 15px;
     /* justify-content: space-between; */
 }
-.menu_container li button{
-    background:none;
-    border:none;
+
+.menu_container li button {
+    background: none;
+    border: none;
     /* height:27px; */
     /* width:100px; */
-    margin:auto;
-    font-size:20px;
-    color:#FFFFFF;
+    margin: auto;
+    font-size: 20px;
+    color: #FFFFFF;
     font-family: 'Montserrat', sans-serif;
     cursor: pointer;
     /* justify-content: space-between; */
 }
+
 /* hamburger menu */
 
 .hamburger {
@@ -89,8 +104,10 @@ body{
     position: relative;
     cursor: pointer;
     overflow: hidden;
-    display: none;;
+    display: none;
+    ;
 }
+
 .hamburger span {
     display: block;
     width: 100%;
@@ -104,299 +121,501 @@ body{
     box-shadow: 0 2px 2px rgba(0, 0, 0, .20);
     cursor: pointer;
 }
+
 .hamburger span:nth-child(1) {
     transform: translate(-50%, -50%) translateY(-15px);
     transition: .2s;
 }
+
 .hamburger span:nth-child(4) {
     transform: translate(-50%, -50%) translateY(15px);
     transition: .2s;
 }
+
 .hamburger.active span:nth-child(1) {
     transform: translate(-50%, -50%) translateY(-30px);
     opacity: 0;
 }
+
 .hamburger.active span:nth-child(4) {
     transform: translate(-50%, -50%) translateY(30px);
     opacity: 0;
 }
+
 .hamburger.active span:nth-child(2) {
     transform: translate(-50%, -50%) rotate(45deg);
     transition-delay: .2s;
 }
+
 .hamburger.active span:nth-child(3) {
     transform: translate(-50%, -50%) rotate(-45deg);
     transition-delay: .2s;
 }
+
 /* menu on */
 
 /* header */
-.header_container{
-    width:100%;
-    height:100%;
+.header_container {
+    width: 100%;
+    height: 100%;
     background-image: url('img/background_header.png');
-    display:flex;
+    display: flex;
 }
-.header_logo{
-    margin:auto;
+
+.header_logo {
+    margin: auto;
     max-width: 400px;
 }
+
 /* Nasze uslugi sekcja */
-.Section_Nasze_uslugi{
-    display:flex;
-    width:100%;
-    background-color:#111111;
+.Section_Nasze_uslugi {
+    display: flex;
+    width: 100%;
+    background-color: #111111;
     flex-direction: column;
 
 }
-.Nasze_uslugi_container{
-    width:90%;
+
+.Nasze_uslugi_container {
+    width: 90%;
     max-width: 1450px;
-    height:536px;
-    display:flex;
-    margin:100px auto;
+    height: 536px;
+    display: flex;
+    margin: 100px auto;
 }
-.Nasze_uslugi_container .Nasze_uslugi{
-    width:30%;
-    margin-right:auto;
+
+.Nasze_uslugi_container .Nasze_uslugi {
+    width: 30%;
+    margin-right: auto;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
 
 }
-.Nasze_uslugi_container .Nasze_uslugi h1{
-    font-size:40px;
+
+.Nasze_uslugi_container .Nasze_uslugi h1 {
+    font-size: 40px;
     font-family: 'Montserrat', sans-serif;
     color: #EEEEEE;
 }
-.Nasze_uslugi_container .Nasze_uslugi span{
-    width:84px;
-    height:2px;
-    background-color:#BB8547;
-    display:block;
+
+.Nasze_uslugi_container .Nasze_uslugi span {
+    width: 84px;
+    height: 2px;
+    background-color: #BB8547;
+    display: block;
 }
-.Nasze_uslugi_container .Nasze_uslugi p{
-    font-size:18px;
+
+.Nasze_uslugi_container .Nasze_uslugi p {
+    font-size: 18px;
     font-family: 'Lucida Sans Regular', sans-serif;
-    color:#EEEEEE;
+    color: #EEEEEE;
     line-height: 1.2;
-    word-spacing:5px;
+    word-spacing: 5px;
 }
-.Nasze_uslugi_container .Nasze_uslugi .mobile_Nasze_usługi{
-    margin:0;
+
+.Nasze_uslugi_container .Nasze_uslugi .mobile_Nasze_usługi {
+    margin: 0;
 }
-.kontakt_Nasze_Uslugi{
-    color:#BB8547;
+
+.kontakt_Nasze_Uslugi {
+    color: #BB8547;
     cursor: pointer;
 
 }
-.Nasze_uslugi_container img{
-    width:60%;
-    height:530px;
-    margin:auto 0 0 0;
+
+.Nasze_uslugi_container img {
+    width: 60%;
+    height: 530px;
+    margin: auto 0 0 0;
 }
-.belka{
-    width:84px;
-    height:2px;
-    background-color:#BB8547;
-    display:block;
-    margin:0 auto;
+
+.belka {
+    width: 84px;
+    height: 2px;
+    background-color: #BB8547;
+    display: block;
+    margin: 0 auto;
 }
-.Nasze_uslugi_faktyczne_uslugi_container{
-    width:90%;
+
+.Nasze_uslugi_faktyczne_uslugi_container {
+    width: 90%;
     max-width: 1450px;
-    display:flex;
-    margin:100px auto;
+    display: flex;
+    margin: 100px auto;
 
     flex-direction: column;
 }
-.contaienr_for_squares{
-    width:100%;
-    margin-bottom:100px;
-    display:flex;
+
+.contaienr_for_squares {
+    width: 100%;
+    margin-bottom: 100px;
+    display: flex;
     justify-content: space-between;
-    
+
 }
-.box{
-    width:300px;
-    height:300px;
-    background-color:#1D1D1D;
+
+.box {
+    width: 300px;
+    height: 300px;
+    background-color: #1D1D1D;
     /* margin:auto; */
-    display:flex;
+    display: flex;
     border: 1px solid #BB8547;
     border-radius: 10px;
 }
-.box_content_container{
-    width:85%;
-    height:85%;
-    display:flex;
+
+.box_content_container {
+    width: 85%;
+    height: 85%;
+    display: flex;
     /* justify-content: space-between; */
     flex-direction: column;
-    margin:auto;
+    margin: auto;
 }
-.box_content_img{
-    width:36px;
-    height:36px;
+
+.box_content_img {
+    width: 36px;
+    height: 36px;
 }
-.box_content_h2{
-    font-size:25px;
-    color:#EEEEEE;
-    margin-top:15px;
+
+.box_content_h2 {
+    font-size: 25px;
+    color: #EEEEEE;
+    margin-top: 15px;
     margin-bottom: 10px;
 }
-.box_content_belka_span{
-    background-color:#BB8547;
-    display:block;
-    height:2px;
-    width:84px;
+
+.box_content_belka_span {
+    background-color: #BB8547;
+    display: block;
+    height: 2px;
+    width: 84px;
     margin-bottom: 10px;
 }
-.box_content_paragraph{
-    font-size:18px;
-    color:#EEEEEE;
+
+.box_content_paragraph {
+    font-size: 18px;
+    color: #EEEEEE;
 }
-.Nasze_uslugi_header{
+
+.Nasze_uslugi_header {
     width: 100%;
     flex-direction: column;
     display: flex;
-    margin: 0 auto ;
+    margin: 0 auto;
 }
-.Nasze_uslugi_footer{
-    width:100%;
+
+.Nasze_uslugi_footer {
+    width: 100%;
 }
-.Nasze_uslugi_footer_h3{
-    font-size:32px;
-    color:#EEEEEE;
+
+.Nasze_uslugi_footer_h3 {
+    font-size: 32px;
+    color: #EEEEEE;
 }
-.Nasze_uslugi_footer_paragraph{
-    font-size:18px;
-    color:#EEEEEE;
+
+.Nasze_uslugi_footer_paragraph {
+    font-size: 18px;
+    color: #EEEEEE;
     line-height: 1.2;
-    word-spacing:5px;
+    word-spacing: 5px;
 }
-.belka_Nasze_uslugi_footer{
-  margin:10px 0 10px 0;
+
+.belka_Nasze_uslugi_footer {
+    margin: 10px 0 10px 0;
 }
-.inside_footer_Nasze_uslugi{
-    width:100%;
+
+.inside_footer_Nasze_uslugi {
+    width: 100%;
 }
-@media only screen and (max-width: 1200px){
-    .Nasze_uslugi_container{
+
+/* Realizacje section */
+.Realizacje_section {
+    width: 100%;
+    background-color: #1D1D1D;
+    display: flex;
+}
+
+.Realizacje_section_container {
+    width: 90%;
+    margin: 100px auto;
+    max-width: 1450px;
+    display: flex;
+}
+
+.img_container {
+    height: 500px;
+    width: 60%;
+    /* width:100%; */
+    background-color: blue;
+    overflow: hidden;
+    display: flex;
+    position: relative;
+    border-radius:10px;
+}
+.xd{
+    background-color:green;
+}
+.container_img_second{
+width:100%;
+height:100%;
+position: relative;
+background-color:red;
+border-radius: 10px;
+}
+.img_container_galery {
+    flex-wrap: nowrap;
+    flex-direction: row;
+    justify-content: flex-start;
+    width: 300%;
+    height: 100%;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    display: flex;
+    position: relative;
+}
+
+.img_container_img {
+    min-width: 100%;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.3s ease-out;
+}
+.button1{
+    position: absolute;
+    top: 50%;
+    left: 5%;
+    transform: translate(-50%, -50%);
+    background-color:blue;
+    background:none;
+    border:none;
+    cursor: pointer;
+    font-size:30px;
+    width:40px;
+    height:40px;
+    z-index: 19;
+}
+.button2{
+    position: absolute;
+    top: 50%;
+    left: 95%;
+    transform: translate(-50%, -50%);
+    background-color:blue;
+    background:none;
+    border:none;
+    cursor: pointer;
+    font-size:30px;
+    width:40px;
+    height:40px;
+    z-index: 19;
+}
+.dots_container{
+    position: absolute;
+    top: 90%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color:blue;
+}
+.realizacje_about_container {
+    width: 40%;
+    height: 500px;
+    display:flex;
+}
+
+.realizacje_container {
+    width: 70%;
+    height: 80%;
+    margin: 0 0 auto auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.realizacje_container_title {
+    color: #EEEEEE;
+    font-size: 40px;
+}
+
+.realizacje_container_belka {
+    display: block;
+    height: 2px;
+    width: 122px;
+    background-color: #BB8547;
+}
+
+.realizacje_container_paragraph {
+    font-size: 18px;
+    color: #EEEEEE;
+}
+
+.realizacje_container_Wiecej_button {
+    background-color: #BB8547;
+    border: none;
+    border-radius: 5px;
+    width: 200px;
+    height: 60px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #1D1D1D;
+    text-align: center;
+    vertical-align: middle;
+    line-height: 60px;
+    font-weight: bold;
+}
+
+.animatee {
+    overflow-x: scroll;
+    overflow-y: hidden;
+    -ms-overflow-style: none;
+    -ms-scroll-chaining: none;
+    -ms-scroll-snap-type: mandatory;
+    -ms-scroll-snap-points-x: snapInterval(0%, 100%);
+    transition: transform 0.3s ease-out;
+}
+
+@media only screen and (max-width: 1200px) {
+    .Nasze_uslugi_container {
         flex-direction: column;
-        height:100%;
+        height: 100%;
     }
-    .Nasze_uslugi_container img{
-        width:100%;
+
+    .Nasze_uslugi_container img {
+        width: 100%;
     }
-    .Nasze_uslugi_container .Nasze_uslugi{
-        width:80%;
+
+    .Nasze_uslugi_container .Nasze_uslugi {
+        width: 80%;
         margin-right: 0;
         margin-bottom: 20px;
     }
-    .Nasze_uslugi_container .Nasze_uslugi .mobile_Nasze_usługi{
-margin:10px 0;
+
+    .Nasze_uslugi_container .Nasze_uslugi .mobile_Nasze_usługi {
+        margin: 10px 0;
     }
 }
-@media only screen and (max-width: 1125px){
-    .Nasze_uslugi_header{
+
+@media only screen and (max-width: 1125px) {
+    .Nasze_uslugi_header {
         flex-direction: row;
     }
-    .contaienr_for_squares{
+
+    .contaienr_for_squares {
         margin-bottom: 0;
         flex-direction: column;
     }
-    .box{
-        margin:auto auto 100px auto;
+
+    .box {
+        margin: auto auto 100px auto;
     }
 }
-@media only screen and (max-width: 1080px){
-    .menu_container li button{
+
+@media only screen and (max-width: 1080px) {
+    .menu_container li button {
         font-size: 20px;
     }
 }
-@media only screen and (max-width: 900px){
-    .ul_container .container_for_buttons{
-        display:none;
+
+@media only screen and (max-width: 900px) {
+    .ul_container .container_for_buttons {
+        display: none;
         /* transform: translateX(300px); */
-        transition:.5s;
+        transition: .5s;
         position: absolute;
-        background-color:#000000;
+        background-color: #000000;
         border-radius: 0px 0px 5px 5px;
-        top:64px;
-        right:0px;
-        height:320px;
-        width:300px;
+        top: 64px;
+        right: 0px;
+        height: 320px;
+        width: 300px;
     }
-    .menu_On{
-        display:flex;
+
+    .menu_On {
+        display: flex;
         transform: inherit;
     }
-    .ul_container .container_for_buttons .menu_container{
+
+    .ul_container .container_for_buttons .menu_container {
         flex-direction: column;
         /* background-color:green; */
         /* height:200px;
         width:100px; */
     }
-    .hamburger{
-        display:flex;
+
+    .hamburger {
+        display: flex;
     }
-    .ul_container .logo_facebook{
-        display:flex;
-        width:160px;
+
+    .ul_container .logo_facebook {
+        display: flex;
+        width: 160px;
         justify-content: space-between;
     }
-    .Nasze_uslugi_container img{
-        height:400px;
+
+    .Nasze_uslugi_container img {
+        height: 400px;
     }
-    .Nasze_uslugi_container .Nasze_uslugi h1{
-        font-size:30px;
+
+    .Nasze_uslugi_container .Nasze_uslugi h1 {
+        font-size: 30px;
     }
-    .inside_footer_Nasze_uslugi{
-        width:95%;
+
+    .inside_footer_Nasze_uslugi {
+        width: 95%;
     }
 }
-@media only screen and (max-width: 800px){
-    .Nasze_uslugi_header{
+
+@media only screen and (max-width: 800px) {
+    .Nasze_uslugi_header {
         flex-direction: column;
     }
-    .box{
-        height:initial;
+
+    .box {
+        height: initial;
     }
-    .box_content_img{
-        margin-top:15px;
+
+    .box_content_img {
+        margin-top: 15px;
     }
-    .box_content_paragraph{
-        margin-bottom:30px;
+
+    .box_content_paragraph {
+        margin-bottom: 30px;
     }
 }
-@media only screen and (max-width: 600px){
-    .header_logo{
+
+@media only screen and (max-width: 600px) {
+    .header_logo {
         max-width: 300px;
     }
-    .Nasze_uslugi_container img{
-        height:300px;
+
+    .Nasze_uslugi_container img {
+        height: 300px;
     }
-    .Nasze_uslugi_container .Nasze_uslugi{
-        width:90%;
+
+    .Nasze_uslugi_container .Nasze_uslugi {
+        width: 90%;
         margin: 0 auto 10px 0;
     }
 }
-@media only screen and (max-width: 500px){
-    .Nasze_uslugi_container img{
-        height:200px;
+
+@media only screen and (max-width: 500px) {
+    .Nasze_uslugi_container img {
+        height: 200px;
     }
 }
+
 /* @media only screen and (max-width: 450px){
     .box{
         width:100%;
     }
 } */
-@media only screen and (max-width: 400px){
-    .header_logo{
+@media only screen and (max-width: 400px) {
+    .header_logo {
         max-width: inherit;
-        width:60%;
+        width: 60%;
     }
-    .box{
-        width:100%;
+
+    .box {
+        width: 100%;
     }
 }
