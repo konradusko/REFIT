@@ -56,7 +56,7 @@ let sliderTableElement = {
         this.touchStartx = e.targetTouches[0].pageX;
     },
     move: function (e) {
-        body.style.overflowY = "hidden";
+        // body.style.overflowY = "hidden";
         this.touchMovex = e.targetTouches[0].pageX;
         this.moveX = (index - 1) * this.image_container_width + (this.touchStartx - this.touchMovex);
         galleryContainer.classList.add("animatee");
@@ -87,7 +87,7 @@ let sliderTableElement = {
             distance = Math.abs((index - 1) * this.image_container_width - this.moveX)
         }
 
-        body.style.overflowY = "scroll";
+        // body.style.overflowY = "scroll";
         if (distance > this.image_container_width / 3) {
             console.log(this.touchMovex < this.touchStartx)
             if (this.touchMovex < this.touchStartx && index > 1 && index < numberOfSlide) {
