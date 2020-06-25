@@ -16,12 +16,14 @@ const body = document.getElementById("body");
 
 
 
-let numberOfSlide = 3;
+let numberOfSlide = 7;
 let sliderTableElement = {
     el: {
         image_container: document.querySelectorAll(".img_container_img"),
         btn_right: document.getElementById("button_right"),
-        btn_left: document.getElementById("button_left")
+        btn_left: document.getElementById("button_left"),
+        dots: document.querySelectorAll(".dots_container_DOT"),
+        current_dot: 0
 
     },
     image_container_width: document.querySelector(".img_container_img").offsetWidth,
@@ -30,9 +32,11 @@ let sliderTableElement = {
     moveX: undefined,
     init: function () {
         this.bindEvents();
-        console.log(this.el.image_container)
+        this.el.dots[this.el.current_dot].style.opacity = 1;
     },
     bindEvents: function (e) {
+
+
         galleryContainer.addEventListener("touchstart", (e) => {
             sliderTableElement.start(e);
         });
@@ -49,26 +53,55 @@ let sliderTableElement = {
         this.el.btn_left.addEventListener("click", e => {
             sliderTableElement.end(e, "left")
         });
-
-
+        window.addEventListener("resize", e => {
+            this.image_container_width = document.querySelector(".img_container_img").offsetWidth;
+            if (index == 1) {
+                for (let i = 0; i <= numberOfSlide - 1; i++) {
+                    this.el.image_container[i].style.transform = ("translate", "translate3d(-" + 0 + "px,0,0)");
+                }
+            } else if (index == 2) {
+                for (let i = 0; i <= numberOfSlide - 1; i++) {
+                    this.el.image_container[i].style.transform = ("translate", "translate3d(-" + (this.image_container_width) + "px,0,0)");
+                }
+            } else if (index > 2) {
+                for (let i = 0; i <= numberOfSlide - 1; i++) {
+                    this.el.image_container[i].style.transform = ("translate", "translate3d(-" + (this.image_container_width * (index - 1)) + "px,0,0)");
+                }
+            }
+        })
+        for (let j = 0; j < this.el.dots.length; j++) {
+            this.el.dots[j].addEventListener("click", e => {
+                if(j != this.el.current_dot){
+                    this.el.current_dot = j;
+                    index = this.el.current_dot +1;
+                    for (let i = 0; i <= numberOfSlide - 1; i++) {
+                        this.el.image_container[i].style.transform = ("translate", "translate3d(-" + (this.image_container_width * (index-1)) + "px,0,0)");
+                    }
+                    this.dots();
+                }
+            })
+        }
+    },
+    dots: function () {
+        for (let i = 0; i < this.el.dots.length; i++) {
+            this.el.dots[i].style.opacity = .5;
+        }
+        this.el.dots[this.el.current_dot].style.opacity = 1;
     },
     start: function (e) {
         this.touchStartx = e.targetTouches[0].pageX;
     },
     move: function (e) {
-        // body.style.overflowY = "hidden";
         this.touchMovex = e.targetTouches[0].pageX;
         this.moveX = (index - 1) * this.image_container_width + (this.touchStartx - this.touchMovex);
         galleryContainer.classList.add("animatee");
         if (index < numberOfSlide) {
-            console.log('xd')
-            for (let i = 0; i <= 2; i++) {
+            for (let i = 0; i <= numberOfSlide - 1; i++) {
                 this.el.image_container[i].style.transform = ("translate", "translate3d(-" + this.moveX + "px,0,0)");
             }
         }
         if (this.touchMovex > this.touchStartx && index === numberOfSlide) {
-            console.log(';lol')
-            for (let i = 0; i <= 2; i++) {
+            for (let i = 0; i <= numberOfSlide - 1; i++) {
                 this.el.image_container[i].style.transform = ("translate", "translate3d(-" + this.moveX + "px,0,0)");
             }
         }
@@ -85,30 +118,30 @@ let sliderTableElement = {
             this.touchStartx = 10
         } else {
             distance = Math.abs((index - 1) * this.image_container_width - this.moveX)
+
         }
 
-        // body.style.overflowY = "scroll";
         if (distance > this.image_container_width / 3) {
             console.log(this.touchMovex < this.touchStartx)
             if (this.touchMovex < this.touchStartx && index > 1 && index < numberOfSlide) {
-                for (let i = 0; i <= 2; i++) {
+                for (let i = 0; i <= numberOfSlide - 1; i++) {
                     this.el.image_container[i].style.transform = ("translate", "translate3d(-" + (this.image_container_width * index) + "px,0,0)");
                 }
                 index++;
             } else if (this.touchMovex < this.touchStartx && index === 1) {
-                for (let i = 0; i <= 2; i++) {
+                for (let i = 0; i <= numberOfSlide - 1; i++) {
                     this.el.image_container[i].style.transform = ("translate", "translate3d(-" + this.image_container_width + "px,0,0)");
                 }
                 index++;
             }
             if (this.touchMovex > this.touchStartx && index > 1) {
-                for (let i = 0; i <= 2; i++) {
+                for (let i = 0; i <= numberOfSlide - 1; i++) {
                     this.el.image_container[i].style.transform = ("translate", "translate3d(-" + this.image_container_width * (index - 2) + "px,0,0)");
                 }
                 index--;
             }
         } else {
-            for (let i = 0; i <= 2; i++) {
+            for (let i = 0; i <= numberOfSlide - 1; i++) {
                 this.el.image_container[i].style.transform = ("translate", "translate3d(-" + (index - 1) * this.image_container_width + "px,0,0)");
             }
         }
@@ -116,6 +149,8 @@ let sliderTableElement = {
     },
     end2: function (e) {
         galleryContainer.classList.remove("animatee");
+        this.el.current_dot = index-1;
+        this.dots()
     },
 
 }

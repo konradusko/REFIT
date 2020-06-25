@@ -353,6 +353,7 @@ body {
     display: flex;
     position: relative;
     border-radius:10px;
+    border: 1px solid #BB8547;
 }
 .xd{
     background-color:green;
@@ -368,7 +369,7 @@ border-radius: 10px;
     flex-wrap: nowrap;
     flex-direction: row;
     justify-content: flex-start;
-    width: 300%;
+    width: 100%;
     height: 100%;
     overflow-x: hidden;
     overflow-y: hidden;
@@ -418,7 +419,21 @@ border-radius: 10px;
     top: 90%;
     left: 50%;
     transform: translate(-50%, -50%);
-    background-color:blue;
+    height:20px;
+    width:300px;
+    display:flex;
+    z-index:10;
+}
+.dots_container .dots_container_DOT{
+    display:block;
+    border: 2px solid gray;
+    background-color:white;
+    width:16px;
+    height:16px;
+    border-radius:50%;
+    margin:auto;
+    opacity:.5;
+    cursor: pointer;
 }
 .realizacje_about_container {
     width: 40%;
@@ -643,6 +658,7 @@ border-radius: 10px;
     .img_container{
         height:300px;
     }
+  
 }
 
 @media only screen and (max-width: 500px) {
@@ -667,5 +683,8 @@ border-radius: 10px;
 
     .box {
         width: 100%;
+    }
+    .dots_container{
+        width:90%;
     }
 }
