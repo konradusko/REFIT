@@ -15,7 +15,6 @@ const galleryContainer = document.getElementById("gallery-container");
 const body = document.getElementById("body");
 
 
-
 let numberOfSlide = 7;
 let sliderTableElement = {
     el: {
