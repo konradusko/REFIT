@@ -32,6 +32,19 @@ let sliderTableElement = {
     init: function () {
         this.bindEvents();
         this.el.dots[this.el.current_dot].style.opacity = 1;
+        this.arrow();
+    },
+    arrow: function () {
+        if (index == 1) {
+            this.el.btn_left.style.display = "none";
+            this.el.btn_right.style.display = "block";
+        } else if (index == numberOfSlide) {
+            this.el.btn_right.style.display = "none";
+            this.el.btn_left.style.display = "block";
+        } else {
+            this.el.btn_right.style.display = "block";
+            this.el.btn_left.style.display = "block";
+        }
     },
     bindEvents: function (e) {
 
@@ -70,13 +83,14 @@ let sliderTableElement = {
         })
         for (let j = 0; j < this.el.dots.length; j++) {
             this.el.dots[j].addEventListener("click", e => {
-                if(j != this.el.current_dot){
+                if (j != this.el.current_dot) {
                     this.el.current_dot = j;
-                    index = this.el.current_dot +1;
+                    index = this.el.current_dot + 1;
                     for (let i = 0; i <= numberOfSlide - 1; i++) {
-                        this.el.image_container[i].style.transform = ("translate", "translate3d(-" + (this.image_container_width * (index-1)) + "px,0,0)");
+                        this.el.image_container[i].style.transform = ("translate", "translate3d(-" + (this.image_container_width * (index - 1)) + "px,0,0)");
                     }
                     this.dots();
+                    this.arrow();
                 }
             })
         }
@@ -148,8 +162,9 @@ let sliderTableElement = {
     },
     end2: function (e) {
         galleryContainer.classList.remove("animatee");
-        this.el.current_dot = index-1;
-        this.dots()
+        this.el.current_dot = index - 1;
+        this.dots();
+        this.arrow();
     },
 
 }
