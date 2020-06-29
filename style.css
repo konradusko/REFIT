@@ -47,7 +47,6 @@ body {
 
 .ul_container .container_for_buttons {
     transition: transform 0.3s ease-out;
-    transform: translateX(0);
 }
 
 .ul_container .logo_facebook {
@@ -229,6 +228,8 @@ body {
     width: 60%;
     height: 530px;
     margin: auto 0 0 0;
+    border: 1px solid #BB8547;
+    border-radius:10px;
 }
 
 .belka {

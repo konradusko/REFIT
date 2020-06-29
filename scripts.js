@@ -1,5 +1,8 @@
 const menu = document.getElementById("hamburger");
 const menu_mobile = document.getElementById("container_for_buttons");
+const galleryContainer = document.getElementById("gallery-container");
+const body = document.getElementById("body");
+const mobileViewport = window.matchMedia("screen and (max-width: 900px)");
 menu.addEventListener("click", function () {
     if (menu.className === "hamburger active") {
         menu.classList.remove("active");
@@ -7,22 +10,23 @@ menu.addEventListener("click", function () {
     } else {
         menu.className = "hamburger active";
         menu_mobile.style.transform = ("translate", "translate3d(-" + 0 + "px,0,0)");
-        
+
     }
 })
 window.addEventListener("click", function (event) {
     console.log(event.target.id)
-if(event.target.id != "hamburger" && event.target.className != "spanek" && menu.className =="hamburger active" ){
-    menu.classList.remove("active");
-    menu_mobile.style.transform = ("translate", "translate3d(" + 300 + "px,0,0)");
-}
+    if (event.target.id != "hamburger" && event.target.className != "spanek" && menu.className == "hamburger active") {
+        if(mobileViewport.matches){
+            menu.classList.remove("active");
+            menu_mobile.style.transform = ("translate", "translate3d(" + 300 + "px,0,0)");
+            console.log("xddasdasd")
+        }
+     
+        
+    }
 })
 //slider
 let index = 1;
-const galleryContainer = document.getElementById("gallery-container");
-const body = document.getElementById("body");
-
-
 let numberOfSlide = 5;
 let sliderTableElement = {
     el: {
@@ -88,6 +92,16 @@ let sliderTableElement = {
                     this.el.image_container[i].style.transform = ("translate", "translate3d(-" + Math.round((this.image_container_width * (index - 1))) + "px,0,0)");
                 }
             }
+            if (mobileViewport) {
+                if(mobileViewport.matches){
+                    menu.classList.remove("active");
+                    menu_mobile.style.transform = ("translate", "translate3d(" + 300 + "px,0,0)");
+                }else{
+                    menu.className = "hamburger active";
+                    menu_mobile.style.transform = ("translate", "translate3d(-" + 0 + "px,0,0)");
+                }
+           
+            }
         })
         for (let j = 0; j < this.el.dots.length; j++) {
             this.el.dots[j].addEventListener("click", e => {
@@ -95,7 +109,7 @@ let sliderTableElement = {
                     this.el.current_dot = j;
                     index = this.el.current_dot + 1;
                     for (let i = 0; i <= numberOfSlide - 1; i++) {
-                        this.el.image_container[i].style.transform = ("translate", "translate3d(-" + Math.round( (this.image_container_width * (index - 1))) + "px,0,0)");
+                        this.el.image_container[i].style.transform = ("translate", "translate3d(-" + Math.round((this.image_container_width * (index - 1))) + "px,0,0)");
                     }
                     this.dots();
                     this.arrow();
