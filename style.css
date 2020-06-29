@@ -46,7 +46,8 @@ body {
 }
 
 .ul_container .container_for_buttons {
-    /* background-color:blue; */
+    transition: transform 0.3s ease-out;
+    transform: translateX(0);
 }
 
 .ul_container .logo_facebook {
@@ -105,7 +106,7 @@ body {
     cursor: pointer;
     overflow: hidden;
     display: none;
-    ;
+    z-index: 30;
 }
 
 .hamburger span {
@@ -347,22 +348,16 @@ body {
 .img_container {
     height: 500px;
     width: 60%;
-    /* width:100%; */
-    background-color: blue;
     overflow: hidden;
     display: flex;
     position: relative;
     border-radius:10px;
     border: 1px solid #BB8547;
 }
-.xd{
-    background-color:green;
-}
 .container_img_second{
 width:100%;
 height:100%;
 position: relative;
-background-color:red;
 border-radius: 10px;
 }
 .img_container_galery {
@@ -383,12 +378,17 @@ border-radius: 10px;
     height: 100%;
     transition: transform 0.3s ease-out;
 }
+.img_container_img img{
+    
+    width:100%;
+    height:100%;
+}
 .button1{
     position: absolute;
     top: 50%;
     left: 5%;
     transform: translate(-50%, -50%);
-    background-color:blue;
+    color:#BB8547;
     background:none;
     border:none;
     cursor: pointer;
@@ -402,7 +402,7 @@ border-radius: 10px;
     top: 50%;
     left: 95%;
     transform: translate(-50%, -50%);
-    background-color:blue;
+    color:#BB8547;
     background:none;
     border:none;
     cursor: pointer;
@@ -790,9 +790,8 @@ border-radius: 10px;
 }
 @media only screen and (max-width: 900px) {
     .ul_container .container_for_buttons {
-        display: none;
-        /* transform: translateX(300px); */
-        transition: .5s;
+        transform: translate3d(300px,0,0);
+        transition: transform 0.3s ease-out;
         position: absolute;
         background-color: #000000;
         border-radius: 0px 0px 5px 5px;
@@ -800,6 +799,9 @@ border-radius: 10px;
         right: 0px;
         height: 320px;
         width: 300px;
+    }
+    #logo_facebook{
+        display:none;
     }
 
     .menu_On {
@@ -817,7 +819,7 @@ border-radius: 10px;
 
     .ul_container .logo_facebook {
         display: flex;
-        width: 160px;
+        width: 40px;
         justify-content: space-between;
     }
 

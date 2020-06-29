@@ -1,13 +1,21 @@
 const menu = document.getElementById("hamburger");
-
+const menu_mobile = document.getElementById("container_for_buttons");
 menu.addEventListener("click", function () {
     if (menu.className === "hamburger active") {
         menu.classList.remove("active");
-        // menuMobile.classList.remove("Menu-main-mobile-active");
+        menu_mobile.style.transform = ("translate", "translate3d(" + 300 + "px,0,0)");
     } else {
         menu.className = "hamburger active";
-        // menuMobile.classList.add("Menu-main-mobile-active");
+        menu_mobile.style.transform = ("translate", "translate3d(-" + 0 + "px,0,0)");
+        
     }
+})
+window.addEventListener("click", function (event) {
+    console.log(event.target.id)
+if(event.target.id != "hamburger" && event.target.className != "spanek" ){
+    menu.classList.remove("active");
+    menu_mobile.style.transform = ("translate", "translate3d(" + 300 + "px,0,0)");
+}
 })
 //slider
 let index = 1;
@@ -15,7 +23,7 @@ const galleryContainer = document.getElementById("gallery-container");
 const body = document.getElementById("body");
 
 
-let numberOfSlide = 7;
+let numberOfSlide = 6;
 let sliderTableElement = {
     el: {
         image_container: document.querySelectorAll(".img_container_img"),
@@ -77,7 +85,7 @@ let sliderTableElement = {
                 }
             } else if (index > 2) {
                 for (let i = 0; i <= numberOfSlide - 1; i++) {
-                    this.el.image_container[i].style.transform = ("translate", "translate3d(-" + (this.image_container_width * (index - 1)) + "px,0,0)");
+                    this.el.image_container[i].style.transform = ("translate", "translate3d(-" + Math.round((this.image_container_width * (index - 1))) + "px,0,0)");
                 }
             }
         })
@@ -87,7 +95,7 @@ let sliderTableElement = {
                     this.el.current_dot = j;
                     index = this.el.current_dot + 1;
                     for (let i = 0; i <= numberOfSlide - 1; i++) {
-                        this.el.image_container[i].style.transform = ("translate", "translate3d(-" + (this.image_container_width * (index - 1)) + "px,0,0)");
+                        this.el.image_container[i].style.transform = ("translate", "translate3d(-" + Math.round( (this.image_container_width * (index - 1))) + "px,0,0)");
                     }
                     this.dots();
                     this.arrow();
@@ -138,7 +146,7 @@ let sliderTableElement = {
             console.log(this.touchMovex < this.touchStartx)
             if (this.touchMovex < this.touchStartx && index > 1 && index < numberOfSlide) {
                 for (let i = 0; i <= numberOfSlide - 1; i++) {
-                    this.el.image_container[i].style.transform = ("translate", "translate3d(-" + (this.image_container_width * index) + "px,0,0)");
+                    this.el.image_container[i].style.transform = ("translate", "translate3d(-" + Math.round((this.image_container_width * index)) + "px,0,0)");
                 }
                 index++;
             } else if (this.touchMovex < this.touchStartx && index === 1) {
@@ -149,13 +157,13 @@ let sliderTableElement = {
             }
             if (this.touchMovex > this.touchStartx && index > 1) {
                 for (let i = 0; i <= numberOfSlide - 1; i++) {
-                    this.el.image_container[i].style.transform = ("translate", "translate3d(-" + this.image_container_width * (index - 2) + "px,0,0)");
+                    this.el.image_container[i].style.transform = ("translate", "translate3d(-" + Math.round(this.image_container_width * (index - 2)) + "px,0,0)");
                 }
                 index--;
             }
         } else {
             for (let i = 0; i <= numberOfSlide - 1; i++) {
-                this.el.image_container[i].style.transform = ("translate", "translate3d(-" + (index - 1) * this.image_container_width + "px,0,0)");
+                this.el.image_container[i].style.transform = ("translate", "translate3d(-" + Math.round((index - 1) * this.image_container_width) + "px,0,0)");
             }
         }
         sliderTableElement.end2();
