@@ -3,6 +3,89 @@ const menu_mobile = document.getElementById("container_for_buttons");
 const galleryContainer = document.getElementById("gallery-container");
 const body = document.getElementById("body");
 const mobileViewport = window.matchMedia("screen and (max-width: 900px)");
+//////////////
+const uslug_button = document.getElementById("uslugi");
+const realizacja_button = document.getElementById("realizacja");
+const wycena_button = document.getElementById("wycena");
+const o_nas_button = document.getElementById("o_nas");
+const kontak_button = document.getElementById("kontakt");
+const aleria_button = document.getElementById("galeria");
+const logo_nav_button = document.getElementById("logo_nav_button");
+const nasze_uslugi_kontakt_button = document.getElementById("nasze_uslugi_kontakt_button");
+const Kontakt_nasze_uslugi_to_nie_koniec = document.getElementById("Kontakt_nasze_uslugi_to_nie_koniec");
+const wycena_kontakt_button = document.getElementById("wycena_kontakt_button");
+
+// ?????
+const header = document.getElementById("header");
+const naszeUslug = document.getElementById("Nasz_uslugi_section");
+const realizacja = document.getElementById("ralizacja_section");
+const wycena = document.getElementById("Wycena_section");
+const O_nas_section = document.getElementById("O_nas_section");
+const kontakt_section = document.getElementById("kontakt_section");
+
+/////////////////
+logo_nav_button.addEventListener("click", e=>{
+    header.scrollIntoView({
+        behavior: 'smooth',
+        block: "start",
+      });
+})
+uslug_button.addEventListener("click", e=>{
+    naszeUslug.scrollIntoView({
+        behavior: 'smooth',
+        block: "start",
+      });
+})
+realizacja_button.addEventListener("click", e=>{
+    realizacja.scrollIntoView({
+        behavior: 'smooth',
+        block: "start",
+      });
+})
+wycena_button.addEventListener("click",e=>{
+    wycena.scrollIntoView({
+        behavior: 'smooth',
+        block: "start",
+      });
+})
+o_nas_button.addEventListener("click",e=>{
+    O_nas_section.scrollIntoView({
+        behavior: 'smooth',
+        block: "start",
+      });
+})
+kontak_button.addEventListener("click",e=>{
+    kontakt_section.scrollIntoView({
+        behavior: 'smooth',
+        block: "start",
+      });
+})
+nasze_uslugi_kontakt_button.addEventListener("click",e=>{
+    kontakt_section.scrollIntoView({
+        behavior: 'smooth',
+        block: "start",
+      });
+})
+Kontakt_nasze_uslugi_to_nie_koniec.addEventListener("click",e=>{
+    kontakt_section.scrollIntoView({
+        behavior: 'smooth',
+        block: "start",
+      });
+})
+wycena_kontakt_button.addEventListener("click",e=>{
+    kontakt_section.scrollIntoView({
+        behavior: 'smooth',
+        block: "start",
+      });
+})
+aleria_button.addEventListener("click",e=>{
+    aleria_button.classList.remove("TEST")
+    aleria_button.classList.add("nav-active")
+    realizacja.scrollIntoView({
+        behavior: 'smooth',
+        block: "start",
+      });
+})
 menu.addEventListener("click", function () {
     if (menu.className === "hamburger active") {
         menu.classList.remove("active");

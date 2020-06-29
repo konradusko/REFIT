@@ -13,6 +13,9 @@ p{
     
     
 }
+button:focus{
+    outline: none;
+}
 /* Nav */
 .nav_container {
     width: 100%;
@@ -35,6 +38,9 @@ p{
 .ul_container li {
     list-style-type: none;
     height: 100%;
+}
+.logo_Refit_Button{
+    cursor: pointer;
 }
 
 .ul_container .logo_Refit {
@@ -85,6 +91,27 @@ p{
     font-size: 20px;
     color: #FFFFFF;
     cursor: pointer;
+}
+.no-active::after{
+    content: '';
+    width: 0;
+    margin-top: 5px;
+    height: 2px;
+    display: block;
+    background-color: #BB8547;
+    transition: width .2s;
+}
+.no-active:hover::after{
+    width:100%;
+}
+.nav-active::after{
+    content: '';
+    width: 100%;
+    margin-top: 5px;
+    height: 2px;
+    display: block;
+    background-color: #BB8547;
+    transition: width .2s;
 }
 .hamburger {
     height: 40px;
@@ -209,7 +236,7 @@ p{
 .kontakt_Nasze_Uslugi {
     color: #BB8547;
     cursor: pointer;
-
+    text-decoration: none;
 }
 
 .Nasze_uslugi_container img {
