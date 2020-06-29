@@ -11,6 +11,7 @@ body {
 p{
     font-family: 'Poppins', sans-serif;
     
+    
 }
 /* Nav */
 .nav_container {
@@ -176,7 +177,7 @@ p{
     margin-right: auto;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    /* justify-content: space-between; */
 
 }
 
@@ -190,6 +191,7 @@ p{
     height: 2px;
     background-color: #BB8547;
     display: block;
+    margin:15px 0;
 }
 
 .Nasze_uslugi_container .Nasze_uslugi p {
@@ -197,10 +199,11 @@ p{
     color: #EEEEEE;
     line-height: 1.2;
     word-spacing: 5px;
+    margin:15px 0;
 }
 
 .Nasze_uslugi_container .Nasze_uslugi .mobile_Nasze_usługi {
-    margin: 0;
+    /* margin: 0; */
 }
 
 .kontakt_Nasze_Uslugi {
