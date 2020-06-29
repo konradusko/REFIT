@@ -12,7 +12,7 @@ menu.addEventListener("click", function () {
 })
 window.addEventListener("click", function (event) {
     console.log(event.target.id)
-if(event.target.id != "hamburger" && event.target.className != "spanek" ){
+if(event.target.id != "hamburger" && event.target.className != "spanek" && menu.className =="hamburger active" ){
     menu.classList.remove("active");
     menu_mobile.style.transform = ("translate", "translate3d(" + 300 + "px,0,0)");
 }
@@ -23,7 +23,7 @@ const galleryContainer = document.getElementById("gallery-container");
 const body = document.getElementById("body");
 
 
-let numberOfSlide = 6;
+let numberOfSlide = 5;
 let sliderTableElement = {
     el: {
         image_container: document.querySelectorAll(".img_container_img"),
