@@ -17,6 +17,23 @@ button:focus{
     outline: none;
 }
 /* Nav */
+.arrow{
+    width:36px;
+    height:36px;
+    position: fixed;
+    bottom:20px;
+    right:30px;
+    background-color:#121212;
+    cursor: pointer;
+    display:flex;
+    border-radius: 5px;
+    border: 1px solid #BB8547;
+}
+.arrow img{
+    width:16px;
+    height:8px;
+    margin:auto;
+}
 .nav_container {
     width: 100%;
     height: 64px;
@@ -92,6 +109,11 @@ button:focus{
     color: #FFFFFF;
     cursor: pointer;
 }
+.menu_container li button a{
+    text-decoration: none;
+    color:#FFFFFF;
+}
+
 .no-active::after{
     content: '';
     width: 0;

@@ -10,12 +10,15 @@ const wycena_button = document.getElementById("wycena");
 const o_nas_button = document.getElementById("o_nas");
 const kontak_button = document.getElementById("kontakt");
 const aleria_button = document.getElementById("galeria");
+const arrow_top = document.getElementById("arrow_top");
+// ??/////
 const logo_nav_button = document.getElementById("logo_nav_button");
 const nasze_uslugi_kontakt_button = document.getElementById("nasze_uslugi_kontakt_button");
 const Kontakt_nasze_uslugi_to_nie_koniec = document.getElementById("Kontakt_nasze_uslugi_to_nie_koniec");
 const wycena_kontakt_button = document.getElementById("wycena_kontakt_button");
-
+let allMenuButons = [uslug_button,realizacja_button,wycena_button,o_nas_button,kontak_button,aleria_button]
 // ?????
+const nav_container = document.getElementById("nav_container_id");
 const header = document.getElementById("header");
 const naszeUslug = document.getElementById("Nasz_uslugi_section");
 const realizacja = document.getElementById("ralizacja_section");
@@ -24,6 +27,12 @@ const O_nas_section = document.getElementById("O_nas_section");
 const kontakt_section = document.getElementById("kontakt_section");
 
 /////////////////
+arrow_top.addEventListener("click", e=>{
+    header.scrollIntoView({
+        behavior: 'smooth',
+        block: "start",
+      });
+})
 logo_nav_button.addEventListener("click", e=>{
     header.scrollIntoView({
         behavior: 'smooth',
@@ -78,14 +87,13 @@ wycena_kontakt_button.addEventListener("click",e=>{
         block: "start",
       });
 })
-aleria_button.addEventListener("click",e=>{
-    aleria_button.classList.remove("TEST")
-    aleria_button.classList.add("nav-active")
-    realizacja.scrollIntoView({
-        behavior: 'smooth',
-        block: "start",
-      });
-})
+
+
+function removeActiveMenu(){
+    allMenuButons.forEach(element => {
+        element.classList.remove('nav-active')
+    });
+}
 menu.addEventListener("click", function () {
     if (menu.className === "hamburger active") {
         menu.classList.remove("active");
@@ -97,12 +105,10 @@ menu.addEventListener("click", function () {
     }
 })
 window.addEventListener("click", function (event) {
-    console.log(event.target.id)
     if (event.target.id != "hamburger" && event.target.className != "spanek" && menu.className == "hamburger active") {
         if(mobileViewport.matches){
             menu.classList.remove("active");
             menu_mobile.style.transform = ("translate", "translate3d(" + 300 + "px,0,0)");
-            console.log("xddasdasd")
         }
      
         
@@ -274,3 +280,24 @@ let sliderTableElement = {
 
 }
 sliderTableElement.init();
+let nav_height = nav_container.offsetHeight*2;
+window.addEventListener("scroll", e=>{
+    if(document.documentElement.scrollTop > header.offsetHeight - nav_height + naszeUslug.offsetHeight + realizacja.offsetHeight + wycena.offsetHeight + O_nas_section.offsetHeight){
+        removeActiveMenu();
+        kontak_button.classList.add("nav-active")
+    }else if(document.documentElement.scrollTop > header.offsetHeight - nav_height + naszeUslug.offsetHeight + realizacja.offsetHeight + wycena.offsetHeight){
+        removeActiveMenu();
+        o_nas_button.classList.add("nav-active")
+    }else if(document.documentElement.scrollTop > header.offsetHeight - nav_height + naszeUslug.offsetHeight + realizacja.offsetHeight){
+        removeActiveMenu();
+        wycena_button.classList.add("nav-active")
+    }else if(document.documentElement.scrollTop > header.offsetHeight - nav_height + naszeUslug.offsetHeight){
+        removeActiveMenu();
+        realizacja_button.classList.add("nav-active")
+    }else if(document.documentElement.scrollTop > header.offsetHeight- nav_height){
+        removeActiveMenu();
+        uslug_button.classList.add("nav-active")
+    }else{
+        removeActiveMenu();
+    }
+})
