@@ -3,6 +3,8 @@ const menu_mobile = document.getElementById("container_for_buttons");
 const galleryContainer = document.getElementById("gallery-container");
 const body = document.getElementById("body");
 const mobileViewport = window.matchMedia("screen and (max-width: 900px)");
+const body_container = document.getElementById("body_container");
+const loading_container = document.getElementById("loading_container");
 //////////////
 const uslug_button = document.getElementById("uslugi");
 const realizacja_button = document.getElementById("realizacja");
@@ -126,11 +128,14 @@ let sliderTableElement = {
         current_dot: 0
 
     },
-    image_container_width: document.querySelector(".img_container_img").offsetWidth,
+    // image_container_width: document.querySelector(".img_container_img").offsetWidth,
+    image_container_width:document.querySelector(".img_container_img").getBoundingClientRect().width,
     touchStartx: undefined,
     touchMovex: undefined,
     moveX: undefined,
     init: function () {
+        console.log(this.image_container_width)
+
         this.bindEvents();
         this.el.dots[this.el.current_dot].style.opacity = 1;
         this.arrow();
@@ -148,8 +153,7 @@ let sliderTableElement = {
         }
     },
     bindEvents: function (e) {
-
-
+    
         galleryContainer.addEventListener("touchstart", (e) => {
             sliderTableElement.start(e);
         });
@@ -167,7 +171,7 @@ let sliderTableElement = {
             sliderTableElement.end(e, "left")
         });
         window.addEventListener("resize", e => {
-            this.image_container_width = document.querySelector(".img_container_img").offsetWidth;
+            this.image_container_width = document.querySelector(".img_container_img").getBoundingClientRect().width;
             if (index == 1) {
                 for (let i = 0; i <= numberOfSlide - 1; i++) {
                     this.el.image_container[i].style.transform = ("translate", "translate3d(-" + 0 + "px,0,0)");
@@ -282,7 +286,8 @@ let sliderTableElement = {
 sliderTableElement.init();
 let nav_height = nav_container.offsetHeight*2;
 window.addEventListener("scroll", e=>{
-    if(document.documentElement.scrollTop > header.offsetHeight - nav_height + naszeUslug.offsetHeight + realizacja.offsetHeight + wycena.offsetHeight + O_nas_section.offsetHeight){
+
+    if(document.documentElement.scrollTop > header.offsetHeight -nav_height  + naszeUslug.offsetHeight + realizacja.offsetHeight + wycena.offsetHeight + O_nas_section.offsetHeight){
         removeActiveMenu();
         kontak_button.classList.add("nav-active")
     }else if(document.documentElement.scrollTop > header.offsetHeight - nav_height + naszeUslug.offsetHeight + realizacja.offsetHeight + wycena.offsetHeight){
@@ -300,4 +305,10 @@ window.addEventListener("scroll", e=>{
     }else{
         removeActiveMenu();
     }
+})
+
+window.addEventListener("load", e=>{
+    body.classList.remove("loading_page");
+    loading_container.style.display = "none";
+    sliderTableElement.image_container_width = document.querySelector(".img_container_img").getBoundingClientRect().width;
 })

@@ -8,32 +8,172 @@ body {
     overflow-x: hidden;
     height: 100vh;
 }
-p{
+
+p {
     font-family: 'Poppins', sans-serif;
-    
-    
+
+
 }
-button:focus{
+
+button:focus {
     outline: none;
 }
+
 /* Nav */
-.arrow{
-    width:36px;
-    height:36px;
+.loading_page{
+overflow: hidden;
+position: relative;
+}
+.loading_container{
+position: absolute;
+z-index: 80;
+width:100%;
+background-color: #121212;
+height:100%;
+}
+
+.inner {
+    width: 115px;
+    height: 100px;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    position: absolute;
+}
+
+.circuit {
+    background-image: url("img/circuit_4.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100%;
+    width: 256px;
+    height: 256px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.ramie {
+    height: 100px;
+    width: 400px;
+    background-image: url('img/ramie.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100%;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%) rotate(90deg);
+    -webkit-animation: spinRamie 2s linear infinite;
+    /*  Safari */
+    animation: spinRamie 2s linear infinite;
+}
+
+.circuit_border {
+    width: 100%;
+    height: 100%;
+    border-top: 2px solid white;
+    border-top-left-radius: 50%;
+    border-top-right-radius: 50%;
+    -webkit-animation: spin 2s linear infinite;
+    /*Safari */
+    animation: spin 2s linear infinite;
+
+}
+
+@-webkit-keyframes spinRamie {
+    0% {
+        -webkit-transform: translate(-50%, -50%) rotate(160deg);
+    }
+
+    50% {
+        -webkit-transform: translate(-50%, -50%) rotate(270deg);
+    }
+
+    75% {
+        -webkit-transform: translate(-50%, -50%) rotate(360deg);
+    }
+
+    100% {
+        -webkit-transform: translate(-50%, -50%) rotate(0deg);
+    }
+}
+
+@keyframes spinRamie {
+    0% {
+        transform: translate(-50%, -50%) rotate(160deg);
+    }
+
+    50% {
+        transform: translate(-50%, -50%) rotate(270deg);
+    }
+
+    75% {
+        transform: translate(-50%, -50%) rotate(360deg);
+    }
+
+    100% {
+        transform: translate(-50%, -50%) rotate(0deg);
+    }
+}
+
+@-webkit-keyframes spin {
+    0% {
+        -webkit-transform: rotate(0deg);
+    }
+
+    50% {
+        -webkit-transform: rotate(90deg);
+    }
+
+    75% {
+        -webkit-transform: rotate(180deg);
+    }
+
+    100% {
+        -webkit-transform: rotate(360deg);
+    }
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    50% {
+        transform: rotate(90deg);
+    }
+
+    75% {
+        transform: rotate(180deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.arrow {
+    width: 36px;
+    height: 36px;
     position: fixed;
-    bottom:20px;
-    right:30px;
-    background-color:#121212;
+    bottom: 20px;
+    right: 30px;
+    background-color: #121212;
     cursor: pointer;
-    display:flex;
+    display: flex;
     border-radius: 5px;
     border: 1px solid #BB8547;
+    z-index: 20;
 }
-.arrow img{
-    width:16px;
-    height:8px;
-    margin:auto;
+
+.arrow img {
+    width: 16px;
+    height: 8px;
+    margin: auto;
 }
+
 .nav_container {
     width: 100%;
     height: 64px;
@@ -56,7 +196,8 @@ button:focus{
     list-style-type: none;
     height: 100%;
 }
-.logo_Refit_Button{
+
+.logo_Refit_Button {
     cursor: pointer;
 }
 
@@ -109,12 +250,13 @@ button:focus{
     color: #FFFFFF;
     cursor: pointer;
 }
-.menu_container li button a{
+
+.menu_container li button a {
     text-decoration: none;
-    color:#FFFFFF;
+    color: #FFFFFF;
 }
 
-.no-active::after{
+.no-active::after {
     content: '';
     width: 0;
     margin-top: 5px;
@@ -123,10 +265,12 @@ button:focus{
     background-color: #BB8547;
     transition: width .2s;
 }
-.no-active:hover::after{
-    width:100%;
+
+.no-active:hover::after {
+    width: 100%;
 }
-.nav-active::after{
+
+.nav-active::after {
     content: '';
     width: 100%;
     margin-top: 5px;
@@ -135,6 +279,7 @@ button:focus{
     background-color: #BB8547;
     transition: width .2s;
 }
+
 .hamburger {
     height: 40px;
     width: 40px;
@@ -240,7 +385,7 @@ button:focus{
     height: 2px;
     background-color: #BB8547;
     display: block;
-    margin:15px 0;
+    margin: 15px 0;
 }
 
 .Nasze_uslugi_container .Nasze_uslugi p {
@@ -248,7 +393,7 @@ button:focus{
     color: #EEEEEE;
     line-height: 1.2;
     word-spacing: 5px;
-    margin:15px 0;
+    margin: 15px 0;
 }
 
 .Nasze_uslugi_container .Nasze_uslugi .mobile_Nasze_usługi {
@@ -266,7 +411,7 @@ button:focus{
     height: 530px;
     margin: auto 0 0 0;
     border: 1px solid #BB8547;
-    border-radius:10px;
+    border-radius: 10px;
 }
 
 .belka {
@@ -389,20 +534,22 @@ button:focus{
     overflow: hidden;
     display: flex;
     position: relative;
-    border-radius:10px;
+    border-radius: 10px;
     border: 1px solid #BB8547;
 }
-.container_img_second{
-width:100%;
-height:100%;
-position: relative;
-border-radius: 10px;
+
+.container_img_second {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    border-radius: 10px;
 }
+
 .img_container_galery {
     flex-wrap: nowrap;
     flex-direction: row;
     justify-content: flex-start;
-    width: 100%;
+    width: 500%;
     height: 100%;
     overflow-x: hidden;
     overflow-y: hidden;
@@ -416,67 +563,79 @@ border-radius: 10px;
     height: 100%;
     transition: transform 0.3s ease-out;
 }
-.img_container_img img{
-    
-    width:100%;
-    height:100%;
+
+.img_container_img img {
+
+    width: 100%;
+    height: 100%;
 }
-.button1{
+
+.button1 {
     position: absolute;
     top: 50%;
     left: 5%;
     transform: translate(-50%, -50%);
-    color:#BB8547;
-    background:none;
-    border:none;
+    color: #BB8547;
+    background: none;
+    border: none;
     cursor: pointer;
-    font-size:30px;
-    width:40px;
-    height:40px;
+    font-size: 30px;
+    width: 40px;
+    height: 40px;
     z-index: 19;
 }
-.button2{
+
+.button2 {
     position: absolute;
     top: 50%;
     left: 95%;
     transform: translate(-50%, -50%);
-    color:#BB8547;
-    background:none;
-    border:none;
+    color: #BB8547;
+    background: none;
+    border: none;
     cursor: pointer;
-    font-size:30px;
-    width:40px;
-    height:40px;
+    font-size: 30px;
+    width: 40px;
+    height: 40px;
     z-index: 19;
 
 }
-.button2:focus {outline:0;}
-.button1:focus {outline:0;}
-.dots_container{
+
+.button2:focus {
+    outline: 0;
+}
+
+.button1:focus {
+    outline: 0;
+}
+
+.dots_container {
     position: absolute;
     top: 90%;
     left: 50%;
     transform: translate(-50%, -50%);
-    height:20px;
-    width:300px;
-    display:flex;
-    z-index:10;
+    height: 20px;
+    width: 300px;
+    display: flex;
+    z-index: 10;
 }
-.dots_container .dots_container_DOT{
-    display:block;
+
+.dots_container .dots_container_DOT {
+    display: block;
     border: 2px solid gray;
-    background-color:white;
-    width:16px;
-    height:16px;
-    border-radius:50%;
-    margin:auto;
-    opacity:.5;
+    background-color: white;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    margin: auto;
+    opacity: .5;
     cursor: pointer;
 }
+
 .realizacje_about_container {
     width: 40%;
     height: 500px;
-    display:flex;
+    display: flex;
 }
 
 .realizacje_container {
@@ -529,60 +688,72 @@ border-radius: 10px;
     -ms-scroll-snap-points-x: snapInterval(0%, 100%);
     transition: transform 0.3s ease-out;
 }
+
 /* wycena */
-.Wycena_section{
-    width:100%;
-    background-color:#121212;
-    display:flex;
+.Wycena_section {
+    width: 100%;
+    background-color: #121212;
+    display: flex;
 }
-.wycena_section_container{
+
+.wycena_section_container {
     width: 90%;
     max-width: 1450px;
     display: flex;
     margin: 50px auto;
 }
-.wycena{
-    width:40%;
-    display:flex;
-    
+
+.wycena {
+    width: 40%;
+    display: flex;
+
 }
-.wycena_text{
-    width:80%;
-    margin:80px auto 0 0;
+
+.wycena_text {
+    width: 80%;
+    margin: 80px auto 0 0;
 }
-.wycena_text h5{
-    color:#EEEEEE;
-    font-size:40px;
+
+.wycena_text h5 {
+    color: #EEEEEE;
+    font-size: 40px;
 }
-.wycena_text span{
+
+.wycena_text span {
     width: 84px;
     height: 2px;
     background-color: #BB8547;
     display: block;
-    margin:15px 0;
+    margin: 15px 0;
 }
+
 .wycena_text p {
-    color:#EEEEEE;
-    font-size:15px;
+    color: #EEEEEE;
+    font-size: 15px;
 }
-.wycena_kontakt{
-    width:60%;
-    display:flex;
+
+.wycena_kontakt {
+    width: 60%;
+    display: flex;
     flex-direction: column;
 }
-.input_email_phone_numer,.input_text,.input_message{
-    width:90%;
+
+.input_email_phone_numer,
+.input_text,
+.input_message {
+    width: 90%;
     height: 40px;
-    background:none;
+    background: none;
     border: 1px solid #BB8547;
     border-radius: 5px;
-    color:white;
-    font-size:18px;
-    margin:0 0 15px auto;
-    padding:5px 0 5px 10px;
+    color: white;
+    font-size: 18px;
+    margin: 0 0 15px auto;
+    padding: 5px 0 5px 10px;
 }
-.input_message{
-    height:200px;
+
+.input_message {
+    height: 200px;
     max-height: 200px;
     overflow-y: hidden;
     /* -ms-overflow-style: none;
@@ -591,7 +762,8 @@ border-radius: 10px;
     -ms-scroll-snap-points-x: snapInterval(0%, 100%);
     transition: transform 0.3s ease-out; */
 }
-.input_submit{
+
+.input_submit {
     background-color: #BB8547;
     border: none;
     border-radius: 5px;
@@ -604,130 +776,169 @@ border-radius: 10px;
     vertical-align: middle;
     line-height: 40px;
     font-weight: bold;
-    margin:0 0 0 auto;
+    margin: 0 0 0 auto;
 }
-.input_email_phone_numer:focus{outline: none;}
-.input_text:focus{outline: none;}
-.input_message:focus{outline: none;}
-.input_submit:focus{outline: none;}
+
+.input_email_phone_numer:focus {
+    outline: none;
+}
+
+.input_text:focus {
+    outline: none;
+}
+
+.input_message:focus {
+    outline: none;
+}
+
+.input_submit:focus {
+    outline: none;
+}
+
 /* o nas */
-.o_nas_section{
-    width:100%;
-    background-color:#1D1D1D;
-    display:flex;
+.o_nas_section {
+    width: 100%;
+    background-color: #1D1D1D;
+    display: flex;
 }
-.o_nas_section_container{
+
+.o_nas_section_container {
     max-width: 1450px;
-    width:90%;
-    margin:100px auto;
-    display:flex;
+    width: 90%;
+    margin: 100px auto;
+    display: flex;
 }
-.o_nas_section_container_img_container{
-    width:50%;
-    height:300px;
-    display:flex;
+
+.o_nas_section_container_img_container {
+    width: 50%;
+    height: 300px;
+    display: flex;
 
 }
-.O_nas_IMG{
-    width:350px;
-    height:300px;
-    margin:auto;
+
+.O_nas_IMG {
+    width: 350px;
+    height: 300px;
+    margin: auto;
 }
-.o_nas_section_container_text_container{
-    width:50%;
-    height:300px;
-    display:flex;
+
+.o_nas_section_container_text_container {
+    width: 50%;
+    height: 300px;
+    display: flex;
 
 }
-.content_o_nas{
+
+.content_o_nas {
     width: 80%;
-    margin:auto 0 auto auto;
+    margin: auto 0 auto auto;
 }
-.o_nas_section_title,.kontakt_title{
-    color:#EEEEEE;
-    font-size:35px;
+
+.o_nas_section_title,
+.kontakt_title {
+    color: #EEEEEE;
+    font-size: 35px;
 }
-.content_o_nas_belka,.belka_kontakt{
+
+.content_o_nas_belka,
+.belka_kontakt {
     width: 84px;
     height: 2px;
     background-color: #BB8547;
     display: block;
-    margin:15px 0;
+    margin: 15px 0;
 }
-.content_o_nas_p,.kontakt_p{
-    color:white;
-    font-size:15px;
-    margin:10px 0;
+
+.content_o_nas_p,
+.kontakt_p {
+    color: white;
+    font-size: 15px;
+    margin: 10px 0;
 }
+
 /* kontakt */
-.kontakt_section{
-    width:100%;
-    background-color:#121212;
-    display:flex;
+.kontakt_section {
+    width: 100%;
+    background-color: #121212;
+    display: flex;
 }
-.kontakt_sction_container{
-    width:90%;
-    margin:100px auto;
-    display:flex;
+
+.kontakt_sction_container {
+    width: 90%;
+    margin: 100px auto;
+    display: flex;
 }
-.kontakt{
-    width:50%;
-    height:250px;
-    display:flex;
+
+.kontakt {
+    width: 50%;
+    height: 250px;
+    display: flex;
 }
-.kontakt_text{
-    width:70%;
-    margin:20px auto auto 0;
+
+.kontakt_text {
+    width: 70%;
+    margin: 20px auto auto 0;
 }
-.dane_do_kontaktu{
-    width:50%;
-    display:flex;
-    height:250px;
+
+.dane_do_kontaktu {
+    width: 50%;
+    display: flex;
+    height: 250px;
 }
-.dane{
-    width:100%;
-    height:35px;
-    display:flex;
+
+.dane {
+    width: 100%;
+    height: 35px;
+    display: flex;
 
 }
-.dane_container{
-    display:flex;
+
+.dane_container {
+    display: flex;
     flex-direction: column;
     justify-content: space-evenly;
-    margin:0 auto;
-    
+    margin: 0 auto;
+
 }
-.dane img{
-    width:35px;
-    height:35px;
+
+.dane img {
+    width: 35px;
+    height: 35px;
     margin-right: 30px;
 }
-.dane a{
-    font-size:22px;
-    color:#EEEEEE;
+
+.dane a {
+    font-size: 22px;
+    color: #EEEEEE;
     text-decoration: none;
-    margin:auto 0;
+    margin: auto 0;
 }
-.footer_contaienr{
-    width:100%;
-    height:50px;
-    background-color:#1D1D1D;
-    display:flex;
+
+.footer_contaienr {
+    width: 100%;
+    height: 50px;
+    background-color: #1D1D1D;
+    display: flex;
 }
-.footer{
-    margin:auto;
+
+.footer {
+    margin: auto;
 }
-.footer span{
-    color:white;
+
+.footer span {
+    color: white;
 }
-.footer span a{
+
+.footer span a {
     text-decoration: none;
     font-weight: bold;
-    color:#BB8547;
+    color: #BB8547;
 }
-.kreska{
-    margin:0 10px;
+
+.kreska {
+    margin: 0 10px;
 }
+
 @media only screen and (max-width: 1200px) {
     .Nasze_uslugi_container {
         flex-direction: column;
@@ -762,14 +973,17 @@ border-radius: 10px;
     .box {
         margin: auto auto 100px auto;
     }
-    .img_container{
-        height:450px;
+
+    .img_container {
+        height: 450px;
     }
-    .O_nas_IMG{
+
+    .O_nas_IMG {
         margin: 0;
     }
-    .o_nas_section_container_text_container{
-        height:initial;
+
+    .o_nas_section_container_text_container {
+        height: initial;
     }
 }
 
@@ -777,58 +991,72 @@ border-radius: 10px;
     .menu_container li button {
         font-size: 20px;
     }
-    .Realizacje_section_container{
+
+    .Realizacje_section_container {
         flex-direction: column;
     }
-    .img_container{
-        width:100%;
-        order:2;
+
+    .img_container {
+        width: 100%;
+        order: 2;
 
     }
-    .realizacje_about_container{
-        order:1;
-        width:100%;
-        height:initial;
-        margin-bottom:100px;
+
+    .realizacje_about_container {
+        order: 1;
+        width: 100%;
+        height: initial;
+        margin-bottom: 100px;
     }
-   
-    .realizacje_container{
-        width:80%;
-        height:100%;
-        margin:initial;
+
+    .realizacje_container {
+        width: 80%;
+        height: 100%;
+        margin: initial;
     }
-    .realizacje_container_title{
-        margin-bottom:20px;
+
+    .realizacje_container_title {
+        margin-bottom: 20px;
     }
-    .realizacje_container_belka{
-        margin-bottom:20px;
+
+    .realizacje_container_belka {
+        margin-bottom: 20px;
     }
-    .realizacje_container_paragraph{
+
+    .realizacje_container_paragraph {
         margin-bottom: 20px;
     }
 }
-@media only screen and (max-width: 1000px){
-    .wycena_section_container{
+
+@media only screen and (max-width: 1000px) {
+    .wycena_section_container {
         flex-direction: column;
     }
-    .wycena{
-        margin-bottom:50px;
-        width:80%;
+
+    .wycena {
+        margin-bottom: 50px;
+        width: 80%;
     }
-    .wycena_text{
-        width:80%;
+
+    .wycena_text {
+        width: 80%;
     }
-    .wycena_kontakt{
-        width:80%;
+
+    .wycena_kontakt {
+        width: 80%;
     }
-    .input_email_phone_numer, .input_text, .input_message{
-        width:100%;
+
+    .input_email_phone_numer,
+    .input_text,
+    .input_message {
+        width: 100%;
         margin: 0 0 15px 0;
     }
 }
+
 @media only screen and (max-width: 900px) {
     .ul_container .container_for_buttons {
-        transform: translate3d(300px,0,0);
+        transform: translate3d(300px, 0, 0);
         transition: transform 0.3s ease-out;
         position: absolute;
         background-color: #000000;
@@ -838,8 +1066,9 @@ border-radius: 10px;
         height: 320px;
         width: 300px;
     }
-    #logo_facebook{
-        display:none;
+
+    #logo_facebook {
+        display: none;
     }
 
     .menu_On {
@@ -873,27 +1102,32 @@ border-radius: 10px;
         width: 95%;
     }
 }
-@media only screen and (max-width: 850px){
-    .o_nas_section_container{
+
+@media only screen and (max-width: 850px) {
+    .o_nas_section_container {
         flex-direction: column;
     }
-    .o_nas_section_container_img_container{
-        width:100%;
+
+    .o_nas_section_container_img_container {
+        width: 100%;
 
     }
-    .O_nas_IMG{
-        margin:0 auto;
+
+    .O_nas_IMG {
+        margin: 0 auto;
     }
-    .o_nas_section_container_text_container{
-        width:100%;
-        margin-top:60px;
+
+    .o_nas_section_container_text_container {
+        width: 100%;
+        margin-top: 60px;
     }
-    
-    .content_o_nas{
-        margin:0 auto 0 0;
+
+    .content_o_nas {
+        margin: 0 auto 0 0;
     }
 
 }
+
 @media only screen and (max-width: 800px) {
     .Nasze_uslugi_header {
         flex-direction: column;
@@ -910,26 +1144,32 @@ border-radius: 10px;
     .box_content_paragraph {
         margin-bottom: 30px;
     }
-    .kontakt_sction_container{
+
+    .kontakt_sction_container {
         flex-direction: column;
     }
-    .kontakt{
-        width:100%;
-        height:inherit;
+
+    .kontakt {
+        width: 100%;
+        height: inherit;
         margin-bottom: 30px;
     }
-    .dane_do_kontaktu{
-        width:100%;
+
+    .dane_do_kontaktu {
+        width: 100%;
     }
-    .dane_container{
-        margin:inherit;
-    }
-}
-@media only screen and (max-width: 700px){
-    .img_container{
-        height:350px;
+
+    .dane_container {
+        margin: inherit;
     }
 }
+
+@media only screen and (max-width: 700px) {
+    .img_container {
+        height: 350px;
+    }
+}
+
 @media only screen and (max-width: 600px) {
     .header_logo {
         max-width: 300px;
@@ -943,58 +1183,70 @@ border-radius: 10px;
         width: 90%;
         margin: 0 auto 10px 0;
     }
-    .realizacje_container{
-        width:90%;
+
+    .realizacje_container {
+        width: 90%;
     }
-    .img_container{
-        height:300px;
+
+    .img_container {
+        height: 300px;
     }
-    .footer{
-        display:flex;
+
+    .footer {
+        display: flex;
         flex-direction: column;
-        height:100%;
+        height: 100%;
     }
-    .footer span{
-        margin:auto;
+
+    .footer span {
+        margin: auto;
     }
-    .kreska{
-        display:none;
+
+    .kreska {
+        display: none;
     }
-  
+
 }
 
 @media only screen and (max-width: 500px) {
     .Nasze_uslugi_container img {
         height: 200px;
     }
-    .realizacje_container_title{
-        font-size:34px;
+
+    .realizacje_container_title {
+        font-size: 34px;
     }
 }
 
-@media only screen and (max-width: 450px){
-    .wycena{
-        width:100%;
+@media only screen and (max-width: 450px) {
+    .wycena {
+        width: 100%;
 
     }
-    .wycena_text{
-        width:90%;
+
+    .wycena_text {
+        width: 90%;
     }
-    .wycena_kontakt{
-        width:100%;
+
+    .wycena_kontakt {
+        width: 100%;
     }
-    .o_nas_section_container_img_container{
-        height:250px;
+
+    .o_nas_section_container_img_container {
+        height: 250px;
     }
-    .O_nas_IMG{
-        width:90%;
-        margin:auto;
-        height:100%;
+
+    .O_nas_IMG {
+        width: 90%;
+        margin: auto;
+        height: 100%;
     }
-    .content_o_nas{
-        width:90%;
+
+    .content_o_nas {
+        width: 90%;
     }
 }
+
 @media only screen and (max-width: 400px) {
     .header_logo {
         max-width: inherit;
@@ -1004,7 +1256,25 @@ border-radius: 10px;
     .box {
         width: 100%;
     }
-    .dots_container{
-        width:90%;
+
+    .dots_container {
+        width: 90%;
+    }
+}
+
+@media only screen and (max-width: 340px) {
+    .circuit {
+        width: 200px;
+        height: 200px;
+    }
+
+    .ramie {
+        height: 75px;
+        width: 300px;
+    }
+
+    .inner {
+        width: 85px;
+        height: 70px;
     }
 }
