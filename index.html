@@ -255,14 +255,14 @@
                                 id="wycena_kontakt_button">Kontakt</a>.</p>
                     </div>
                 </div>
-                <div class="wycena_kontakt">
+                <form class="wycena_kontakt" action="contactform.php" method="POST">
                     <input type="email" name="email_phone" id="txtEmail" class="input_email_phone_numer"
-                        placeholder="Twój e-mail lub numer telefonu" onchange="validateEmail()">
+                        placeholder="Twój e-mail lub numer telefonu" >
                     <input type="text" name="title" class="input_text" placeholder="Temat wiadomości...">
-                    <textarea name="text_area" cols="30" class="input_message" rows="10"
+                    <textarea name="message" cols="30" class="input_message" rows="10"
                         placeholder="Twoja wiadomość..."></textarea>
                     <input type="submit" value="Wyślij" class="input_submit">
-                </div>
+                </form>
             </div>
         </section>
         <section id="O_nas_section" class="o_nas_section">
@@ -318,7 +318,7 @@
                 </div>
             </div>
         </section>
-        <footer class="footer_contaienr">
+        <footer id="footer" class="footer_contaienr">
             <div class="footer">
                 <span>Projekt: <a href="https://www.behance.net/sergewalas8a69" target="_blank">Sergiusz
                         Wałaszkiewicz</a></span>

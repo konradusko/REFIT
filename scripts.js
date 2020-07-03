@@ -18,7 +18,7 @@ const logo_nav_button = document.getElementById("logo_nav_button");
 const nasze_uslugi_kontakt_button = document.getElementById("nasze_uslugi_kontakt_button");
 const Kontakt_nasze_uslugi_to_nie_koniec = document.getElementById("Kontakt_nasze_uslugi_to_nie_koniec");
 const wycena_kontakt_button = document.getElementById("wycena_kontakt_button");
-let allMenuButons = [uslug_button,realizacja_button,wycena_button,o_nas_button,kontak_button,aleria_button]
+let allMenuButons = [uslug_button, realizacja_button, wycena_button, o_nas_button, kontak_button, aleria_button]
 // ?????
 const nav_container = document.getElementById("nav_container_id");
 const header = document.getElementById("header");
@@ -27,71 +27,72 @@ const realizacja = document.getElementById("ralizacja_section");
 const wycena = document.getElementById("Wycena_section");
 const O_nas_section = document.getElementById("O_nas_section");
 const kontakt_section = document.getElementById("kontakt_section");
+const footer = document.getElementById("footer");
 
 /////////////////
-arrow_top.addEventListener("click", e=>{
+arrow_top.addEventListener("click", e => {
     header.scrollIntoView({
         behavior: 'smooth',
         block: "start",
-      });
+    });
 })
-logo_nav_button.addEventListener("click", e=>{
+logo_nav_button.addEventListener("click", e => {
     header.scrollIntoView({
         behavior: 'smooth',
         block: "start",
-      });
+    });
 })
-uslug_button.addEventListener("click", e=>{
+uslug_button.addEventListener("click", e => {
     naszeUslug.scrollIntoView({
         behavior: 'smooth',
         block: "start",
-      });
+    });
 })
-realizacja_button.addEventListener("click", e=>{
+realizacja_button.addEventListener("click", e => {
     realizacja.scrollIntoView({
         behavior: 'smooth',
         block: "start",
-      });
+    });
 })
-wycena_button.addEventListener("click",e=>{
+wycena_button.addEventListener("click", e => {
     wycena.scrollIntoView({
         behavior: 'smooth',
         block: "start",
-      });
+    });
 })
-o_nas_button.addEventListener("click",e=>{
+o_nas_button.addEventListener("click", e => {
     O_nas_section.scrollIntoView({
         behavior: 'smooth',
         block: "start",
-      });
+    });
 })
-kontak_button.addEventListener("click",e=>{
+kontak_button.addEventListener("click", e => {
     kontakt_section.scrollIntoView({
         behavior: 'smooth',
         block: "start",
-      });
+    });
 })
-nasze_uslugi_kontakt_button.addEventListener("click",e=>{
+nasze_uslugi_kontakt_button.addEventListener("click", e => {
     kontakt_section.scrollIntoView({
         behavior: 'smooth',
         block: "start",
-      });
+    });
 })
-Kontakt_nasze_uslugi_to_nie_koniec.addEventListener("click",e=>{
+Kontakt_nasze_uslugi_to_nie_koniec.addEventListener("click", e => {
     kontakt_section.scrollIntoView({
         behavior: 'smooth',
         block: "start",
-      });
+    });
 })
-wycena_kontakt_button.addEventListener("click",e=>{
+wycena_kontakt_button.addEventListener("click", e => {
     kontakt_section.scrollIntoView({
         behavior: 'smooth',
         block: "start",
-      });
+    });
 })
 
 
-function removeActiveMenu(){
+function removeActiveMenu() {
     allMenuButons.forEach(element => {
         element.classList.remove('nav-active')
     });
@@ -108,12 +109,12 @@ menu.addEventListener("click", function () {
 })
 window.addEventListener("click", function (event) {
     if (event.target.id != "hamburger" && event.target.className != "spanek" && menu.className == "hamburger active") {
-        if(mobileViewport.matches){
+        if (mobileViewport.matches) {
             menu.classList.remove("active");
             menu_mobile.style.transform = ("translate", "translate3d(" + 300 + "px,0,0)");
         }
-     
-        
+
+
     }
 })
 //slider
@@ -129,7 +130,7 @@ let sliderTableElement = {
 
     },
     // image_container_width: document.querySelector(".img_container_img").offsetWidth,
-    image_container_width:document.querySelector(".img_container_img").getBoundingClientRect().width,
+    image_container_width: document.querySelector(".img_container_img").getBoundingClientRect().width,
     touchStartx: undefined,
     touchMovex: undefined,
     moveX: undefined,
@@ -153,7 +154,7 @@ let sliderTableElement = {
         }
     },
     bindEvents: function (e) {
-    
+
         galleryContainer.addEventListener("touchstart", (e) => {
             sliderTableElement.start(e);
         });
@@ -186,14 +187,14 @@ let sliderTableElement = {
                 }
             }
             if (mobileViewport) {
-                if(mobileViewport.matches){
+                if (mobileViewport.matches) {
                     menu.classList.remove("active");
                     menu_mobile.style.transform = ("translate", "translate3d(" + 300 + "px,0,0)");
-                }else{
+                } else {
                     menu.className = "hamburger active";
                     menu_mobile.style.transform = ("translate", "translate3d(-" + 0 + "px,0,0)");
                 }
-           
+
             }
         })
         for (let j = 0; j < this.el.dots.length; j++) {
@@ -284,31 +285,45 @@ let sliderTableElement = {
 
 }
 sliderTableElement.init();
-let nav_height = nav_container.offsetHeight*2;
-window.addEventListener("scroll", e=>{
+let nav_height = nav_container.offsetHeight * 2;
+window.addEventListener("scroll", e => {
 
-    if(document.documentElement.scrollTop > header.offsetHeight -nav_height  + naszeUslug.offsetHeight + realizacja.offsetHeight + wycena.offsetHeight + O_nas_section.offsetHeight){
+    if (document.documentElement.scrollTop > header.offsetHeight - nav_height + naszeUslug.offsetHeight + realizacja.offsetHeight + wycena.offsetHeight + O_nas_section.offsetHeight) {
         removeActiveMenu();
+        arrow_top.style.display = "flex";
         kontak_button.classList.add("nav-active")
-    }else if(document.documentElement.scrollTop > header.offsetHeight - nav_height + naszeUslug.offsetHeight + realizacja.offsetHeight + wycena.offsetHeight){
+    } else if (document.documentElement.scrollTop > header.offsetHeight - nav_height + naszeUslug.offsetHeight + realizacja.offsetHeight + wycena.offsetHeight) {
         removeActiveMenu();
+        arrow_top.style.display = "flex";
         o_nas_button.classList.add("nav-active")
-    }else if(document.documentElement.scrollTop > header.offsetHeight - nav_height + naszeUslug.offsetHeight + realizacja.offsetHeight){
+    } else if (document.documentElement.scrollTop > header.offsetHeight - nav_height + naszeUslug.offsetHeight + realizacja.offsetHeight) {
         removeActiveMenu();
+        arrow_top.style.display = "flex";
         wycena_button.classList.add("nav-active")
-    }else if(document.documentElement.scrollTop > header.offsetHeight - nav_height + naszeUslug.offsetHeight){
+    } else if (document.documentElement.scrollTop > header.offsetHeight - nav_height + naszeUslug.offsetHeight) {
         removeActiveMenu();
+        arrow_top.style.display = "flex";
         realizacja_button.classList.add("nav-active")
-    }else if(document.documentElement.scrollTop > header.offsetHeight- nav_height){
+    } else if (document.documentElement.scrollTop > header.offsetHeight - nav_height) {
         removeActiveMenu();
+        arrow_top.style.display = "flex";
         uslug_button.classList.add("nav-active")
-    }else{
+    } else {
         removeActiveMenu();
+        arrow_top.style.display = "none";
     }
 })
 
-window.addEventListener("load", e=>{
+window.addEventListener("load", e => {
     body.classList.remove("loading_page");
+    header.style.display = "flex";
+    naszeUslug.style.display = "flex";
+    realizacja.style.display = "flex";
+    wycena.style.display = "flex";
+    O_nas_section.style.display = "flex";
+    kontakt_section.style.display = "flex";
+    footer.style.display = "flex";
     loading_container.style.display = "none";
     sliderTableElement.image_container_width = document.querySelector(".img_container_img").getBoundingClientRect().width;
+
 })

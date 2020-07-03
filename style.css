@@ -162,7 +162,7 @@ height:100%;
     right: 30px;
     background-color: #121212;
     cursor: pointer;
-    display: flex;
+    display: none;
     border-radius: 5px;
     border: 1px solid #BB8547;
     z-index: 20;
@@ -341,7 +341,7 @@ height:100%;
     width: 100%;
     height: 100%;
     background-image: url('img/background_header.png');
-    display: flex;
+    display: none;
 }
 
 .header_logo {
@@ -351,7 +351,7 @@ height:100%;
 
 /* Nasze uslugi sekcja */
 .Section_Nasze_uslugi {
-    display: flex;
+    display: none;
     width: 100%;
     background-color: #111111;
     flex-direction: column;
@@ -518,7 +518,7 @@ height:100%;
 .Realizacje_section {
     width: 100%;
     background-color: #1D1D1D;
-    display: flex;
+    display: none;
 }
 
 .Realizacje_section_container {
@@ -693,7 +693,7 @@ height:100%;
 .Wycena_section {
     width: 100%;
     background-color: #121212;
-    display: flex;
+    display: none;
 }
 
 .wycena_section_container {
@@ -799,7 +799,7 @@ height:100%;
 .o_nas_section {
     width: 100%;
     background-color: #1D1D1D;
-    display: flex;
+    display: none;
 }
 
 .o_nas_section_container {
@@ -860,7 +860,7 @@ height:100%;
 .kontakt_section {
     width: 100%;
     background-color: #121212;
-    display: flex;
+    display: none;
 }
 
 .kontakt_sction_container {
