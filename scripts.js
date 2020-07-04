@@ -315,7 +315,6 @@ window.addEventListener("scroll", e => {
 })
 
 window.addEventListener("load", e => {
-    body.classList.remove("loading_page");
     header.style.display = "flex";
     naszeUslug.style.display = "flex";
     realizacja.style.display = "flex";
@@ -324,6 +323,8 @@ window.addEventListener("load", e => {
     kontakt_section.style.display = "flex";
     footer.style.display = "flex";
     loading_container.style.display = "none";
+    body.classList.remove("loading_page");
+
     sliderTableElement.image_container_width = document.querySelector(".img_container_img").getBoundingClientRect().width;
 
 })
