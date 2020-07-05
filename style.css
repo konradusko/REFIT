@@ -776,11 +776,7 @@ height:100%;
     height: 200px;
     max-height: 200px;
     overflow-y: hidden;
-    /* -ms-overflow-style: none;
-    -ms-scroll-chaining: none;
-    -ms-scroll-snap-type: mandatory;
-    -ms-scroll-snap-points-x: snapInterval(0%, 100%);
-    transition: transform 0.3s ease-out; */
+
 }
 
 .input_submit {
@@ -797,6 +793,7 @@ height:100%;
     line-height: 40px;
     font-weight: bold;
     margin: 0 0 0 auto;
+    cursor: pointer;
 }
 
 .input_email_phone_numer:focus {
@@ -938,7 +935,7 @@ height:100%;
     width: 100%;
     height: 50px;
     background-color: #1D1D1D;
-    display: flex;
+    display: none;
 }
 
 .footer {

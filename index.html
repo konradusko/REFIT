@@ -256,11 +256,12 @@
                                 id="wycena_kontakt_button">Kontakt</a>.</p>
                     </div>
                 </div>
-                <form class="wycena_kontakt" action="" method="post">
-                    <input type="email" name="emailPhone" id="txtEmail" class="input_email_phone_numer"
-                        placeholder="Twój e-mail lub numer telefonu" >
+                <form class="wycena_kontakt" action="https://formspree.io/xzbjjgzq" method="POST">
+                    <input type="email" name="email" id="txtEmail" class="input_email_phone_numer"
+                        placeholder="Twój e-mail" >
+                    <input type="text" name="number" class="input_text" placeholder="Number telefonu (opcjolanie)">
                     <input type="text" name="title" class="input_text" placeholder="Temat wiadomości...">
-                    <textarea name="message" cols="30" class="input_message" rows="10"
+                    <textarea type="text" name="content" cols="30" class="input_message" rows="10"
                         placeholder="Twoja wiadomość..."></textarea>
                     <input type="submit" name="submit" value="Wyślij" class="input_submit">
                 </form>
