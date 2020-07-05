@@ -20,7 +20,7 @@ h1,h2,h3,h4,h5,h6{
 button:focus {
     outline: none;
 }
-input{
+input,textarea{
     font-family: 'Poppins', sans-serif;
     font-weight: lighter;
 }
@@ -186,7 +186,7 @@ height:100vh;
     width: 36px;
     height: 36px;
     position: fixed;
-    bottom: 20px;
+    bottom: 60px;
     right: 30px;
     background-color: #121212;
     cursor: pointer;
@@ -708,6 +708,7 @@ height:100vh;
     vertical-align: middle;
     line-height: 40px;
     font-weight: bold;
+    font-family: 'Poppins', sans-serif;
 }
 
 .animatee {
@@ -846,7 +847,7 @@ height:100vh;
 }
 
 .O_nas_IMG {
-    width: 350px;
+    width: 320px;
     height: 300px;
     margin: auto;
 }
@@ -941,6 +942,7 @@ height:100vh;
     color: #EEEEEE;
     text-decoration: none;
     margin: auto 0;
+    font-family: 'Poppins', sans-serif;
 }
 
 .footer_contaienr {
@@ -962,6 +964,7 @@ height:100vh;
     text-decoration: none;
     font-weight: bold;
     color: #BB8547;
+    font-family: 'Poppins', sans-serif;
 }
 
 .kreska {
