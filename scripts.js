@@ -12,7 +12,7 @@ const submit_button = document.getElementById("submit_button");
 //////////////
 const uslug_button = document.getElementById("uslugi");
 const realizacja_button = document.getElementById("realizacja");
-const wycena_button = document.getElementById("wycena");
+// const wycena_button = document.getElementById("wycena");
 const o_nas_button = document.getElementById("o_nas");
 const kontak_button = document.getElementById("kontakt");
 const aleria_button = document.getElementById("galeria");
@@ -21,17 +21,18 @@ const arrow_top = document.getElementById("arrow_top");
 const logo_nav_button = document.getElementById("logo_nav_button");
 const nasze_uslugi_kontakt_button = document.getElementById("nasze_uslugi_kontakt_button");
 const Kontakt_nasze_uslugi_to_nie_koniec = document.getElementById("Kontakt_nasze_uslugi_to_nie_koniec");
-const wycena_kontakt_button = document.getElementById("wycena_kontakt_button");
-let allMenuButons = [uslug_button, realizacja_button, wycena_button, o_nas_button, kontak_button, aleria_button]
+// const wycena_kontakt_button = document.getElementById("wycena_kontakt_button");
+let allMenuButons = [uslug_button, realizacja_button, o_nas_button, kontak_button, aleria_button]
 // ?????
 const nav_container = document.getElementById("nav_container_id");
 const header = document.getElementById("header");
 const naszeUslug = document.getElementById("Nasz_uslugi_section");
 const realizacja = document.getElementById("ralizacja_section");
-const wycena = document.getElementById("Wycena_section");
+// const wycena = document.getElementById("Wycena_section");
 const O_nas_section = document.getElementById("O_nas_section");
 const kontakt_section = document.getElementById("kontakt_section");
 const footer = document.getElementById("footer");
+let nav_height = nav_container.offsetHeight * 2;
 
 /////////////////
 arrow_top.addEventListener("click", e => {
@@ -58,12 +59,12 @@ realizacja_button.addEventListener("click", e => {
         block: "start",
     });
 })
-wycena_button.addEventListener("click", e => {
-    wycena.scrollIntoView({
-        behavior: 'smooth',
-        block: "start",
-    });
-})
+// wycena_button.addEventListener("click", e => {
+//     wycena.scrollIntoView({
+//         behavior: 'smooth',
+//         block: "start",
+//     });
+// })
 o_nas_button.addEventListener("click", e => {
     O_nas_section.scrollIntoView({
         behavior: 'smooth',
@@ -88,12 +89,12 @@ Kontakt_nasze_uslugi_to_nie_koniec.addEventListener("click", e => {
         block: "start",
     });
 })
-wycena_kontakt_button.addEventListener("click", e => {
-    kontakt_section.scrollIntoView({
-        behavior: 'smooth',
-        block: "start",
-    });
-})
+// wycena_kontakt_button.addEventListener("click", e => {
+//     kontakt_section.scrollIntoView({
+//         behavior: 'smooth',
+//         block: "start",
+//     });
+// })
 
 
 function removeActiveMenu() {
@@ -289,26 +290,20 @@ let sliderTableElement = {
 
 }
 sliderTableElement.init();
-let nav_height = nav_container.offsetHeight * 2;
 window.addEventListener("scroll", e => {
-
-    if (document.documentElement.scrollTop > header.offsetHeight - nav_height + naszeUslug.offsetHeight + realizacja.offsetHeight + wycena.offsetHeight + O_nas_section.offsetHeight) {
+    if (document.documentElement.scrollTop > header.offsetHeight -nav_container.offsetHeight*2 + naszeUslug.offsetHeight + realizacja.offsetHeight  + O_nas_section.offsetHeight) {
         removeActiveMenu();
         arrow_top.style.display = "flex";
         kontak_button.classList.add("nav-active")
-    } else if (document.documentElement.scrollTop > header.offsetHeight - nav_height + naszeUslug.offsetHeight + realizacja.offsetHeight + wycena.offsetHeight) {
+    } else if (document.documentElement.scrollTop > header.offsetHeight -nav_container.offsetHeight*2 + naszeUslug.offsetHeight + realizacja.offsetHeight ) {
         removeActiveMenu();
         arrow_top.style.display = "flex";
         o_nas_button.classList.add("nav-active")
-    } else if (document.documentElement.scrollTop > header.offsetHeight - nav_height + naszeUslug.offsetHeight + realizacja.offsetHeight) {
-        removeActiveMenu();
-        arrow_top.style.display = "flex";
-        wycena_button.classList.add("nav-active")
-    } else if (document.documentElement.scrollTop > header.offsetHeight - nav_height + naszeUslug.offsetHeight) {
+    } else  if (document.documentElement.scrollTop > header.offsetHeight - nav_container.offsetHeight*2 + naszeUslug.offsetHeight) {
         removeActiveMenu();
         arrow_top.style.display = "flex";
         realizacja_button.classList.add("nav-active")
-    } else if (document.documentElement.scrollTop > header.offsetHeight - nav_height) {
+    } else if (document.documentElement.scrollTop > header.offsetHeight - nav_container.offsetHeight*2) {
         removeActiveMenu();
         arrow_top.style.display = "flex";
         uslug_button.classList.add("nav-active")
@@ -325,7 +320,7 @@ window.addEventListener("load", e => {
     header.style.display = "flex";
     naszeUslug.style.display = "flex";
     realizacja.style.display = "flex";
-    wycena.style.display = "flex";
+    // wycena.style.display = "flex";
     O_nas_section.style.display = "flex";
     kontakt_section.style.display = "flex";
     footer.style.display = "flex";
