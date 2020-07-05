@@ -958,6 +958,7 @@ height:100vh;
 
 .footer span {
     color: white;
+    font-family: 'Poppins', sans-serif;
 }
 
 .footer span a {
@@ -1276,6 +1277,9 @@ height:100vh;
 
     .content_o_nas {
         width: 90%;
+    }
+    .dane a {
+        font-size: 18px;
     }
 }
 
