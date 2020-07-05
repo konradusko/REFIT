@@ -5,6 +5,10 @@ const body = document.getElementById("body");
 const mobileViewport = window.matchMedia("screen and (max-width: 900px)");
 const body_container = document.getElementById("body_container");
 const loading_container = document.getElementById("loading_container");
+const txtEmail = document.getElementById("txtEmail");
+const txtTitle = document.getElementById("Title");
+const txtmessage = document.getElementById("message");
+const submit_button = document.getElementById("submit_button");
 //////////////
 const uslug_button = document.getElementById("uslugi");
 const realizacja_button = document.getElementById("realizacja");
@@ -315,6 +319,9 @@ window.addEventListener("scroll", e => {
 })
 
 window.addEventListener("load", e => {
+    loading_container.style.display = "none";
+    body.classList.remove("loading_page");
+    nav_container.style.display = "flex";
     header.style.display = "flex";
     naszeUslug.style.display = "flex";
     realizacja.style.display = "flex";
@@ -322,9 +329,18 @@ window.addEventListener("load", e => {
     O_nas_section.style.display = "flex";
     kontakt_section.style.display = "flex";
     footer.style.display = "flex";
-    loading_container.style.display = "none";
-    body.classList.remove("loading_page");
-
     sliderTableElement.image_container_width = document.querySelector(".img_container_img").getBoundingClientRect().width;
 
+})
+
+window.addEventListener("keyup" , e=>{
+    if(txtEmail.value.length > 1 && txtTitle.value.length >1 && txtmessage.value.length >1){
+        submit_button.style.opacity = 1;
+        submit_button.style.cursor = "pointer";
+        submit_button.disabled= false;
+    }else{
+        submit_button.style.opacity = .5;
+        submit_button.style.cursor = "no-drop";
+        submit_button.disabled= true;
+    }
 })
