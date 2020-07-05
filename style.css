@@ -11,12 +11,18 @@ body {
 
 p {
     font-family: 'Poppins', sans-serif;
-
-
+}
+h1,h2,h3,h4,h5,h6{
+    font-family: 'Poppins', sans-serif;
+    font-weight: bold;
 }
 
 button:focus {
     outline: none;
+}
+input{
+    font-family: 'Poppins', sans-serif;
+    font-weight: lighter;
 }
 
 input:-webkit-autofill,
@@ -271,6 +277,9 @@ height:100vh;
     font-size: 20px;
     color: #FFFFFF;
     cursor: pointer;
+    font-family: 'Poppins', sans-serif;
+    font-weight: normal;
+
 }
 
 .menu_container li button a {
