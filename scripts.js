@@ -328,14 +328,14 @@ window.addEventListener("load", e => {
 
 })
 
-window.addEventListener("keyup" , e=>{
-    if(txtEmail.value.length > 1 && txtTitle.value.length >1 && txtmessage.value.length >1){
-        submit_button.style.opacity = 1;
-        submit_button.style.cursor = "pointer";
-        submit_button.disabled= false;
-    }else{
-        submit_button.style.opacity = .5;
-        submit_button.style.cursor = "no-drop";
-        submit_button.disabled= true;
-    }
-})
+// window.addEventListener("keyup" , e=>{
+//     if(txtEmail.value.length > 1 && txtTitle.value.length >1 && txtmessage.value.length >1){
+//         submit_button.style.opacity = 1;
+//         submit_button.style.cursor = "pointer";
+//         submit_button.disabled= false;
+//     }else{
+//         submit_button.style.opacity = .5;
+//         submit_button.style.cursor = "no-drop";
+//         submit_button.disabled= true;
+//     }
+// })
